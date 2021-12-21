@@ -19,6 +19,10 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import HatsTimePage from '../HatsTimePage/HatsTimePage';
+import DocumentationPage from '../DocumentationPage/DocumentationPage';
+import AddHatPage from '../AddHatPage/AddHatPage';
+import FavoritesPage from '../FavoritesPage/FavoritesPage';
 
 import './App.css';
 
@@ -48,6 +52,32 @@ function App() {
             <AboutPage />
           </Route>
 
+          {/* Visiting localhost:3000/about will show the about page. */}
+          <Route
+            // shows AboutPage at all times (logged in or not)
+            exact
+            path="/documentation"
+          >
+            <DocumentationPage />
+          </Route>
+
+          {/* Visiting localhost:3000/about will show the about page. */}
+          <Route
+            // shows AboutPage at all times (logged in or not)
+            exact
+            path="/hats_time"
+          >
+            <HatsTimePage />
+          </Route>
+
+          <ProtectedRoute
+            // logged in shows UserPage else shows LoginPage
+            exact
+            path="/favorites"
+          >
+            <FavoritesPage />
+          </ProtectedRoute>
+
           {/* For protected routes, the view could show one of several things on the same route.
             Visiting localhost:3000/user will show the UserPage if the user is logged in.
             If the user is not logged in, the ProtectedRoute will show the LoginPage (component).
@@ -66,6 +96,14 @@ function App() {
             path="/info"
           >
             <InfoPage />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            // logged in shows UserPage else shows LoginPage
+            exact
+            path="/add_hat"
+          >
+            <AddHatPage />
           </ProtectedRoute>
 
           <Route
