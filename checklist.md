@@ -24,17 +24,17 @@
         [ ] PUT Route
       [ ] Button - Delete
         [ ] DELETE Route
-    [ ] Add a hat
-      [ ] Form
-        [ ] State for each input
-      [ ] Inputs
-        [ ] style
-        [ ] url - uploader API?
-        [ ] description
-        [ ] color
-        [ ] fabric
+    [x] Add a hat
+      [x] Form
+        [x] State for each input
+      [x] Inputs
+        [x] style
+        [x] url - uploader API?
+        [x] description
+        [x] color
+        [x] fabric
         [ ] ALL FIELDS REQUIRED
-      [ ] Button - Submit
+      [x] Button - Submit
     
     [ ] Documentation
       [ ] W3 - WCAG
@@ -42,15 +42,15 @@
       [ ] Deque
 
     [ ] Sagas
-      [ ] Root
-        [ ] FETCH_HATS, fetchHats
-        [ ] ADD_HAT, addHats
+      [x] Root
+        [x] FETCH_HATS, fetchHats
+        [x] ADD_HAT, addHats
         [ ] ADD_FAV, addFave - PUT Route RED ALERT
           [ ] check last group project repo for PUT Route
         [ ] DELETE_HAT, deleteHat
     [ ] Reducers
-      [ ] Store
-      [ ] Middleware
+      [x] Store
+      [x] Middleware
       [ ] FETCH_HATS
         [ ] this is the big one?
         [ ] the big object with all of the keys

@@ -27,6 +27,10 @@ export default function HatsTimePage() {
             <li key={hat.id}>
               <img height="300px" src={hat.photo_url}/>
               <p>{hat.description}</p>
+              <p>{hat.hat_color}</p>
+              <p>{hat.hat_style}</p>
+              <p>{hat.hat_fabric}</p>
+              <p>{hat.hat_vibe}</p>
               <button onClick={favButton}>FAV</button>
               <button onClick={deleteButton}>DELETE</button>
             </li>
