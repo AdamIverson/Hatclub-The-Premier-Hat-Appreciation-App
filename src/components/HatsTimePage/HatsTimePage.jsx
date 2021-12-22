@@ -25,7 +25,8 @@ export default function HatsTimePage() {
         {hats.map((hat) => {
           return (
             <li key={hat.id}>
-              <img height="300px" src={hat.photo_url + "?okay"}/>
+              <img height="300px" src={hat.photo_url}/>
+              <p>{hat.description}</p>
               <button onClick={favButton}>FAV</button>
               <button onClick={deleteButton}>DELETE</button>
             </li>
