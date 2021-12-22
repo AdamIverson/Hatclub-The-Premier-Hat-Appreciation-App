@@ -4,10 +4,19 @@ import { useDispatch, useSelector } from "react-redux";
 export default function HatsTimePage() {
   const dispatch = useDispatch();
   const hats = useSelector((store) => store.setHats);
+  console.log(hats);
 
   useEffect(() => {
     dispatch({ type: "GET_HATS" });
   }, []);
+
+  function favButton() {
+    console.log('fav button click');
+  }
+
+  function deleteButton() {
+    console.log('delete button click');
+  }
 
   return (
     <>
@@ -16,9 +25,9 @@ export default function HatsTimePage() {
         {hats.map((hat) => {
           return (
             <li key={hat.id}>
-              <img height="300px" src={hat.photo_url}/>
-              <button>FAV</button>
-              <button>DELETE</button>
+              <img height="300px" src={hat.photo_url + "?okay"}/>
+              <button onClick={favButton}>FAV</button>
+              <button onClick={deleteButton}>DELETE</button>
             </li>
           )
         })}
