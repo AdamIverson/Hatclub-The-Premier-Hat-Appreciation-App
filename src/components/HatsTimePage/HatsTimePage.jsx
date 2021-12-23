@@ -10,12 +10,16 @@ export default function HatsTimePage() {
     dispatch({ type: "GET_HATS" });
   }, []);
 
-  function favButton() {
+  const favHat = (id) => {
     console.log('fav button click');
   }
 
-  function deleteButton() {
+  const deleteHat = (id) => {
     console.log('delete button click');
+    dispatch ({
+      type: 'DELETE_HAT',
+      payload: id
+    })
   }
 
   return (
@@ -31,8 +35,8 @@ export default function HatsTimePage() {
               <p>{hat.hat_style}</p>
               <p>{hat.hat_fabric}</p>
               <p>{hat.hat_vibe}</p>
-              <button onClick={favButton}>FAV</button>
-              <button onClick={deleteButton}>DELETE</button>
+              <button onClick={favHat}>FAV</button>
+              <button onClick={e => deleteHat(hat.id)}>DELETE</button>
             </li>
           )
         })}
