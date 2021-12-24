@@ -10,7 +10,7 @@ function Nav() {
   return (
     <div className="nav">
       <Link to="/home">
-        <h2 className="nav-title">Prime Solo Project</h2>
+        <h2 className="nav-title">hatclub</h2>
       </Link>
       {/* <Link className="navLink" to="/hats_time">
         Hats Time
@@ -33,10 +33,6 @@ function Nav() {
               Home
             </Link>
 
-            <Link className="navLink" to="/info">
-              Info Page
-            </Link>
-
             <Link className="navLink" to="/favorites">
               favorhats
             </Link>
@@ -55,6 +51,10 @@ function Nav() {
 
         <Link className="navLink" to="/about">
           About
+        </Link>
+
+        <Link className="navLink" to="/info">
+          Info Page
         </Link>
       </div>
     </div>
