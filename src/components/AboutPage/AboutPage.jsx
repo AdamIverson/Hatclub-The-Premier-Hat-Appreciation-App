@@ -8,9 +8,12 @@ import React from 'react';
 function AboutPage() {
   return (
     <div className="container">
-      <div>
-        <p>This about page is for anyone to read!</p>
-      </div>
+      <h1>about</h1>
+      <ul>
+        <li>anyone wearing a hat can be in hatclub if they want</li>
+        <li>anything can be a hat if it's on your head</li>
+        <button>Documentation</button>
+      </ul>
     </div>
   );
 }
