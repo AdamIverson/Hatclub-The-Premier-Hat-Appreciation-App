@@ -12,13 +12,13 @@ export default function ViewModeButtons() {
     element.classList.toggle("dark-mode");
   }
   return (
-    <>
+    <div>
       <button onClick={openDyslexic}>
         OpenDyslexic
       </button>
       <button onClick={darkMode}>
         Dark Mode
       </button>
-    </>
+    </div>
   )
 }

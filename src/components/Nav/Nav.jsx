@@ -14,10 +14,24 @@ function Nav() {
       <Link to="/home">
         <h2 className="nav-title">hatclub</h2>
       </Link>
+
+      <div>
+        <Link className="navLink" to="/hats_time">
+          Hats Time
+        </Link>
+
+        <Link className="navLink" to="/about">
+          About
+        </Link>
+
+        <Link className="navLink" to="/info">
+          Info Page
+        </Link>
+
       {/* <Link className="navLink" to="/hats_time">
         Hats Time
       </Link> */}
-      <div>
+      {/* <div> */}
         {/* If no user is logged in, show these links */}
         {user.id === null && (
           // If there's no user, show login/registration links
@@ -47,7 +61,7 @@ function Nav() {
           </>
         )}
 
-        <Link className="navLink" to="/hats_time">
+        {/* <Link className="navLink" to="/hats_time">
           Hats Time
         </Link>
 
@@ -57,7 +71,7 @@ function Nav() {
 
         <Link className="navLink" to="/info">
           Info Page
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
