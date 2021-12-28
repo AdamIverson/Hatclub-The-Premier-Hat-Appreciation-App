@@ -19,6 +19,7 @@
   color: #f5f37d;
   padding-left: 10px;
   margin: 0;
+  text-align: center;
 }
 
 .navLink {
@@ -39,4 +40,8 @@
 
 .navLink:hover {
   background-color: #7475e7;
+}
+
+.buttons {
+  text-align: center;
 }

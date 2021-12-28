@@ -1,6 +1,6 @@
 import react, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Box, Button, Card, ImageList, ImageListItem, ImageListItemBar, TextField, NativeSelect } from "@mui/material";
+import { Box, Button, Card, Grid, ListItem, ImageList, ImageListItem, ImageListItemBar, TextField, NativeSelect } from "@mui/material";
 
 
 export default function HatsTimePage() {
@@ -25,15 +25,39 @@ export default function HatsTimePage() {
   };
 
   return (
-    <Box
-      sx={{
-        width: 1000,
-        height: 900
-
-      }}
-    >
-      <ImageList 
-        sx={{ width: 1000, height: 900 }} 
+    <Box>
+<Grid container rowSpacing={1} columnSpacing={{xs: 1, sm: 2, md: 3}}>
+    {hats.map((hat) => (
+      <Grid 
+        key={hat.id}
+        item xs={6}>
+        {/* <Item> */}
+        <img
+              src={`${hat.photo_url}?w=164&h=164&fit=crop&auto=format`}
+              srcSet={`${hat.photo_url}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+              alt={hat.description}
+              loading="lazy"
+              key={hat.id}
+            />
+            <br/>
+            <Button 
+              onClick={favHat}
+              variant="contained"
+              >
+                FAV
+            </Button>
+            <Button 
+              onClick={e => deleteHat(hat.id)}
+              variant="outlined"
+              color="warning"
+              >
+                DELETE
+            </Button>
+        {/* </Item> */}
+      </Grid>
+    ))}
+</Grid>
+      {/* <ImageList
         cols={3} 
         rowHeight={164}
         // variant="masonry"
@@ -41,8 +65,8 @@ export default function HatsTimePage() {
         {hats.map((hat) => (
           <ImageListItem key={hat.id}>
             <img
-              src={`${hat.photo_url}?w=450&h=450&fit=crop&auto=format`}
-              srcSet={`${hat.photo_url}?w=450&h=450&fit=crop&auto=format&dpr=2 2x`}
+              src={`${hat.photo_url}?w=164&h=164&fit=crop&auto=format`}
+              srcSet={`${hat.photo_url}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
               alt={hat.description}
               loading="lazy"
             />
@@ -62,7 +86,7 @@ export default function HatsTimePage() {
             </Button>
           </ImageListItem>
         ))}
-      </ImageList>
+      </ImageList> */}
     </Box>
 
     // <>
