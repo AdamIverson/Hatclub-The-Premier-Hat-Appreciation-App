@@ -1,4 +1,5 @@
-// import React from "react"
+import './ViewModeButtons.css'
+import { Button } from '@mui/material'
 
 export default function ViewModeButtons() {
 
@@ -13,12 +14,18 @@ export default function ViewModeButtons() {
   }
   return (
     <div>
-      <button onClick={openDyslexic}>
+      <Button
+        sx={{ m: 2}}
+        color="success"
+        variant="contained"
+        onClick={openDyslexic}>
         OpenDyslexic
-      </button>
-      <button onClick={darkMode}>
+      </Button>
+      <Button 
+        variant="contained"
+        onClick={darkMode}>
         Dark Mode
-      </button>
+      </Button>
     </div>
   )
 }
