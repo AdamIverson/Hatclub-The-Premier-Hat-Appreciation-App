@@ -15,7 +15,9 @@ function Nav() {
         <h1 className="nav-title">hatclub</h1>
       </Link>
       <br />
+
       <ViewModeButtons />
+      
       <div className="buttons">
         <Link className="navLink" to="/hats_time">
           Hats Time
