@@ -1,7 +1,7 @@
 import react, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Box, Button, Card, Grid, ListItem, ImageList, ImageListItem, ImageListItemBar, TextField, NativeSelect } from "@mui/material";
-
+import './HatsTime.css'
 
 export default function HatsTimePage() {
   const dispatch = useDispatch();

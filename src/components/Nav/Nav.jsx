@@ -4,17 +4,17 @@ import LogOutButton from "../LogOutButton/LogOutButton";
 import "./Nav.css";
 import { useSelector } from "react-redux";
 import ViewModeButtons from "../ViewModeButtons/ViewModeButtons";
-import { Container } from "@mui/material";
+import { Box, Container } from "@mui/material";
 
 function Nav() {
   const user = useSelector((store) => store.user);
 
   return (
-    <Container className="nav" >
+    <Container className="nav">
       <Link to="/home">
         <h1 className="nav-title">hatclub</h1>
       </Link>
-      <br/>
+      <br />
       <ViewModeButtons />
       <div className="buttons">
         <Link className="navLink" to="/hats_time">
