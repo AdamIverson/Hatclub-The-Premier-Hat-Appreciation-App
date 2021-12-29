@@ -2,7 +2,7 @@ import react, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { Button, TextField } from "@mui/material";
-import './AddHatPage.css';
+import "./AddHatPage.css";
 
 function AddHatPage() {
   const dispatch = useDispatch();
@@ -62,49 +62,74 @@ function AddHatPage() {
       <h1>Add Hat</h1>
       <form onSubmit={(e) => addNewHat(e)}>
         <TextField
-          className="inputField"
+          sx={{ m: 2}}
+          label="enter description"
           onChange={handleDescriptionChange}
           value={newDescription}
           type="text"
           placeholder="description"
+          required
+          focused
         />
+        <br />
         <TextField
-          className="inputField"
+          sx={{ m: 2}}
+          label="enter photo url"
           onChange={handleUrlChange}
           value={newPhotoUrl}
           type="text"
           placeholder="photo url"
+          required
+          focused
         />
+        <br />
         <TextField
-          className="inputField"
+          sx={{ m: 2}}
+          label="enter hat color"
           onChange={handleColorChange}
           value={newColor}
           type="text"
           placeholder="hat color"
+          required
+          focused
         />
+        <br />
         <TextField
-          className="inputField"
+          sx={{ m: 2}}
+          label="enter hat style"
           onChange={handleStyleChange}
           value={newStyle}
           type="text"
           placeholder="hat style"
+          required
+          focused
         />
+        <br />
         <TextField
-          className="inputField"
+          sx={{ m: 2}}
+          label="enter hat fabric"
           onChange={handleFabricChange}
           value={newFabric}
           type="text"
           placeholder="hat fabric"
+          required
+          focused
         />
+        <br />
         <TextField
-          className="inputField"
+          sx={{ m: 2}}
+          label="enter hat vibe"
           onChange={handleVibeChange}
           value={newVibe}
           type="text"
           placeholder="hat vibe"
+          required
+          focused
         />
-        <Button type="submit"
-        variant="outlined">Add One Hat</Button>
+        <br />
+        <Button type="submit" variant="outlined">
+          Add One Hat
+        </Button>
       </form>
     </>
   );
