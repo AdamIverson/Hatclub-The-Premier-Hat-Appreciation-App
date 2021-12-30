@@ -15,7 +15,9 @@ function Nav() {
         <h1 className="nav-title">hatclub</h1>
       </Link>
       <br />
+
       <ViewModeButtons />
+      
       <div className="buttons">
         <Link className="navLink" to="/hats_time">
           Hats Time
@@ -25,9 +27,9 @@ function Nav() {
           About
         </Link>
 
-        <Link className="navLink" to="/info">
+        {/* <Link className="navLink" to="/info">
           Info Page
-        </Link>
+        </Link> */}
 
         {/* <Link className="navLink" to="/hats_time">
         Hats Time
@@ -47,7 +49,7 @@ function Nav() {
         {user.id && (
           <>
             <Link className="navLink" to="/user">
-              Home
+              Profile
             </Link>
 
             <Link className="navLink" to="/favorites">

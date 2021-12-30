@@ -1,45 +1,46 @@
-import react, { useState, useEffect } from 'react';
+import react, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { Button, TextField } from "@mui/material";
+import "./AddHatPage.css";
 
 function AddHatPage() {
-
   const dispatch = useDispatch();
   const history = useHistory();
 
-  let [newDescription, setNewDescription] = useState('');
-  let [newPhotoUrl, setNewPhotoUrl] = useState('');
-  let [newColor, setNewColor] = useState('');
-  let [newStyle, setNewStyle] = useState('');
-  let [newFabric, setNewFabric] = useState('');
-  let [newVibe, setNewVibe] = useState('');
+  let [newDescription, setNewDescription] = useState("");
+  let [newPhotoUrl, setNewPhotoUrl] = useState("");
+  let [newColor, setNewColor] = useState("");
+  let [newStyle, setNewStyle] = useState("");
+  let [newFabric, setNewFabric] = useState("");
+  let [newVibe, setNewVibe] = useState("");
 
   const handleDescriptionChange = (e) => {
-    setNewDescription(e.target.value)
+    setNewDescription(e.target.value);
   };
 
   const handleUrlChange = (e) => {
-    setNewPhotoUrl(e.target.value)
+    setNewPhotoUrl(e.target.value);
   };
 
   const handleColorChange = (e) => {
-    setNewColor(e.target.value)
+    setNewColor(e.target.value);
   };
 
   const handleStyleChange = (e) => {
-    setNewStyle(e.target.value)
+    setNewStyle(e.target.value);
   };
 
   const handleFabricChange = (e) => {
-    setNewFabric(e.target.value)
+    setNewFabric(e.target.value);
   };
 
   const handleVibeChange = (e) => {
-    setNewVibe(e.target.value)
+    setNewVibe(e.target.value);
   };
-  
+
   const addNewHat = (e) => {
-    console.log('addNewHat click');
+    console.log("addNewHat click");
     e.preventDefault();
 
     dispatch({
@@ -51,56 +52,87 @@ function AddHatPage() {
         hat_style: newStyle,
         hat_fabric: newFabric,
         hat_vibe: newVibe,
-      }
-    })
-    history.push('/hats_time');
-  }
+      },
+    });
+    history.push("/hats_time");
+  };
 
   return (
     <>
       <h1>Add Hat</h1>
       <form onSubmit={(e) => addNewHat(e)}>
-        <input
-        onChange={handleDescriptionChange}
-        value={newDescription}
-        type="text"
-        placeholder='description'
+        <TextField
+          sx={{ m: 2 }}
+          label="enter description"
+          onChange={handleDescriptionChange}
+          value={newDescription}
+          type="text"
+          placeholder="description"
+          required
+          focused
         />
-        <input
-        onChange={handleUrlChange}
-        value={newPhotoUrl}
-        type="text"
-        placeholder='photo url'
+        <br />
+        <TextField
+          sx={{ m: 2}}
+          label="enter photo url"
+          onChange={handleUrlChange}
+          value={newPhotoUrl}
+          type="text"
+          placeholder="photo url"
+          required
+          focused
         />
-        <input
-        onChange={handleColorChange}
-        value={newColor}
-        type="text"
-        placeholder='hat color'
+        <br />
+        <TextField
+          sx={{ m: 2 }}
+          label="enter hat color"
+          onChange={handleColorChange}
+          value={newColor}
+          type="text"
+          placeholder="hat color"
+          required
+          focused
         />
-        <input
-        onChange={handleStyleChange}
-        value={newStyle}
-        type="text"
-        placeholder='hat style'
+        <br />
+        <TextField
+          sx={{ m: 2 }}
+          label="enter hat style"
+          onChange={handleStyleChange}
+          value={newStyle}
+          type="text"
+          placeholder="hat style"
+          required
+          focused
         />
-        <input
-        onChange={handleFabricChange}
-        value={newFabric}
-        type="text"
-        placeholder='hat fabric'
+        <br />
+        <TextField
+          sx={{ m: 2 }}
+          label="enter hat fabric"
+          onChange={handleFabricChange}
+          value={newFabric}
+          type="text"
+          placeholder="hat fabric"
+          required
+          focused
         />
-        <input
-        onChange={handleVibeChange}
-        value={newVibe}
-        type="text"
-        placeholder='hat vibe'
+        <br />
+        <TextField
+          sx={{ m: 2 }}
+          label="enter hat vibe"
+          onChange={handleVibeChange}
+          value={newVibe}
+          type="text"
+          placeholder="hat vibe"
+          required
+          focused
         />
-        <button type="submit">Add One Hat</button>
+        <br />
+        <Button type="submit" variant="outlined">
+          Add One Hat
+        </Button>
       </form>
-
     </>
-  )
+  );
 }
 
 export default AddHatPage;
