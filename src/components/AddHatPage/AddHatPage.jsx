@@ -62,7 +62,7 @@ function AddHatPage() {
       <h1>Add Hat</h1>
       <form onSubmit={(e) => addNewHat(e)}>
         <TextField
-          sx={{ m: 2}}
+          sx={{ m: 2 }}
           label="enter description"
           onChange={handleDescriptionChange}
           value={newDescription}
@@ -84,7 +84,7 @@ function AddHatPage() {
         />
         <br />
         <TextField
-          sx={{ m: 2}}
+          sx={{ m: 2 }}
           label="enter hat color"
           onChange={handleColorChange}
           value={newColor}
@@ -95,7 +95,7 @@ function AddHatPage() {
         />
         <br />
         <TextField
-          sx={{ m: 2}}
+          sx={{ m: 2 }}
           label="enter hat style"
           onChange={handleStyleChange}
           value={newStyle}
@@ -106,7 +106,7 @@ function AddHatPage() {
         />
         <br />
         <TextField
-          sx={{ m: 2}}
+          sx={{ m: 2 }}
           label="enter hat fabric"
           onChange={handleFabricChange}
           value={newFabric}
@@ -117,7 +117,7 @@ function AddHatPage() {
         />
         <br />
         <TextField
-          sx={{ m: 2}}
+          sx={{ m: 2 }}
           label="enter hat vibe"
           onChange={handleVibeChange}
           value={newVibe}
