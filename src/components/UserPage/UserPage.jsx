@@ -33,10 +33,10 @@ function UserPage() {
       <p>Your ID is: {user.id}</p>
       <h2>Rando Hat</h2>
       <Box>
-        <img
+        {/* <img
           src={`${hats[getRandomHatId()].photo_url}`}
           alt={`${hats[getRandomHatId()].description}`}>
-        </img>
+        </img> */}
         {/* <p>{`${hats[getRandomHatId()].description}`}</p> */}
 
         {/* {hats.map((hat) => (

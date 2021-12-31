@@ -30,7 +30,7 @@
   padding: 24px 10px;
   text-decoration: none;
   font-size: 15px;
-  border: 2px solid #f5f37d;
+  border: 10px solid #f5f37d;
   border-radius: 25px;
   margin: 2rem;
 
@@ -42,7 +42,13 @@
 }
 
 .navLink:hover {
-  background-color: #7475e7;
+  background-color: #f5f37d;
+  color: #484beb;
+}
+
+.navLink:active {
+  background-color: #484beb;
+  color: #f5f37d;
 }
 
 .buttons {
