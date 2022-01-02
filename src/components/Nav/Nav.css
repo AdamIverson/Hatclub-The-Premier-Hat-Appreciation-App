@@ -5,7 +5,7 @@
   align-items: center;
   width: 100%;
   margin: 0 0 30px;
-  background: #484beb;
+  background: #7c7ff6;
   overflow: hidden;
 }
 
@@ -25,7 +25,7 @@
 .navLink {
   display: inline-block;
   color: #f5f37d;
-  background-color: #484beb;
+  background-color: #7c7ff6;
   text-align: center;
   padding: 24px 10px;
   text-decoration: none;
@@ -43,11 +43,11 @@
 
 .navLink:hover {
   background-color: #f5f37d;
-  color: #484beb;
+  color: #7c7ff6;
 }
 
 .navLink:active {
-  background-color: #484beb;
+  background-color: #7c7ff6;
   color: #f5f37d;
 }
 

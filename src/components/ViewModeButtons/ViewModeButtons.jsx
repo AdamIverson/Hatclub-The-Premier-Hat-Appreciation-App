@@ -1,12 +1,11 @@
-import './ViewModeButtons.css'
-import { Button } from '@mui/material'
+import "./ViewModeButtons.css";
+import { Button, ButtonGroup } from "@mui/material";
 
 export default function ViewModeButtons() {
-
   function openDyslexic() {
     let element = document.body;
     element.classList.toggle("open-dyslexic");
-  };
+  }
 
   function darkMode() {
     let element = document.body;
@@ -14,18 +13,25 @@ export default function ViewModeButtons() {
   }
   return (
     <div>
-      <Button
-        sx={{ m: 2}}
-        color="success"
-        variant="contained"
-        onClick={openDyslexic}>
-        OpenDyslexic
-      </Button>
-      <Button 
-        variant="contained"
-        onClick={darkMode}>
-        Dark Mode
-      </Button>
+      <ButtonGroup size="small"
+      sx={{ m: 2 }}>
+        <Button
+          className="btn"
+          sx={{ m: 2 }}
+          color="success"
+          variant="contained"
+          onClick={openDyslexic}
+        >
+          OpenDyslexic
+        </Button>
+        <Button
+          sx={{ m: 2 }}
+          className="btn" 
+          variant="contained" 
+          onClick={darkMode}>
+          Daylight Mode
+        </Button>
+      </ButtonGroup>
     </div>
-  )
+  );
 }
