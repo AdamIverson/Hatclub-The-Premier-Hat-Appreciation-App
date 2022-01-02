@@ -7,7 +7,7 @@ body,
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0px;
-  background-color: #e6e3ee;
+  background-color: #b0a5b1;
 }
 
 img {
@@ -33,7 +33,7 @@ Button
   border-color: #014041;
   border-width: 1px 1px 3px;
   border-radius: 4px;
-  background-color: #484beb;
+  background-color: #7c7ff6;
   color: #f5f37d;
   font-size: 1.1rem;
   outline: 0;
@@ -77,11 +77,11 @@ Button
   color: #008183;
 }
 .open-dyslexic {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: 'Lexend', sans-serif;
 }
 
 .dark-mode {
-  background-color: #5c5d6d;
+  background-color: #ffffff;
 }
 
 /* --------------------------------------------------------------------------------

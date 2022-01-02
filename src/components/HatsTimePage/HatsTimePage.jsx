@@ -1,7 +1,19 @@
 import react, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Box, Button, Card, Grid, ListItem, ImageList, ImageListItem, ImageListItemBar, TextField, NativeSelect } from "@mui/material";
-import './HatsTime.css'
+import {
+  Box,
+  Button,
+  ButtonGroup,
+  Card,
+  Grid,
+  ListItem,
+  ImageList,
+  ImageListItem,
+  ImageListItemBar,
+  TextField,
+  NativeSelect,
+} from "@mui/material";
+import "./HatsTime.css";
 
 export default function HatsTimePage() {
   const dispatch = useDispatch();
@@ -26,37 +38,40 @@ export default function HatsTimePage() {
 
   return (
     <Box>
-<Grid container rowSpacing={1} columnSpacing={{xs: 1, sm: 2, md: 3}}>
-    {hats.map((hat) => (
-      <Grid 
-        key={hat.id}
-        item xs={6}>
-        {/* <Item> */}
-        <img
+      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+        {hats.map((hat) => (
+          <Grid key={hat.id} item xs={6}>
+            {/* <Item> */}
+            <img
               src={`${hat.photo_url}?w=164&h=164&fit=crop&auto=format`}
               srcSet={`${hat.photo_url}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
               alt={hat.description}
               loading="lazy"
               key={hat.id}
             />
-            <br/>
-            <Button 
-              onClick={favHat}
-              variant="contained"
-              >
+            {/* <br /> */}
+            <ButtonGroup className="buttonGroup" size="small">
+              <Button
+                sx={{ m: 1 }}
+                onClick={favHat} 
+                className="photoButton"
+                variant="contained">
                 FAV
-            </Button>
-            <Button 
-              onClick={e => deleteHat(hat.id)}
-              variant="outlined"
-              color="warning"
+              </Button>
+              <Button
+                sx={{ m: 1 }}
+                onClick={(e) => deleteHat(hat.id)}
+                className="photoButton"
+                variant="contained"
+                color="warning"
               >
                 DELETE
-            </Button>
-        {/* </Item> */}
+              </Button>
+            </ButtonGroup>
+            {/* </Item> */}
+          </Grid>
+        ))}
       </Grid>
-    ))}
-</Grid>
       {/* <ImageList
         cols={3} 
         rowHeight={164}

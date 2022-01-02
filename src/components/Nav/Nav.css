@@ -5,7 +5,7 @@
   align-items: center;
   width: 100%;
   margin: 0 0 30px;
-  background: #484beb;
+  background: #7c7ff6;
   overflow: hidden;
 }
 
@@ -25,12 +25,12 @@
 .navLink {
   display: inline-block;
   color: #f5f37d;
-  background-color: #484beb;
+  background-color: #7c7ff6;
   text-align: center;
   padding: 24px 10px;
   text-decoration: none;
   font-size: 15px;
-  border: 2px solid #f5f37d;
+  border: 10px solid #f5f37d;
   border-radius: 25px;
   margin: 2rem;
 
@@ -42,7 +42,13 @@
 }
 
 .navLink:hover {
-  background-color: #7475e7;
+  background-color: #f5f37d;
+  color: #7c7ff6;
+}
+
+.navLink:active {
+  background-color: #7c7ff6;
+  color: #f5f37d;
 }
 
 .buttons {
