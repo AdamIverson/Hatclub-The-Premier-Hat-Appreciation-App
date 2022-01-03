@@ -2,12 +2,10 @@ import React, { useEffect, useState } from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import { useDispatch, useSelector } from 'react-redux';
 import { Box, Button, Paper, TextField } from '@mui/material';
-import { useHistory } from "react-router-dom";
 import './UserPage.css'
 
 function UserPage() {
   const dispatch = useDispatch();
-  const history = useHistory();
 
   // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector((store) => store.user);
@@ -15,6 +13,7 @@ function UserPage() {
 
   useEffect(() => {
     getRandomHatId();
+    // editBtn();
     dispatch({ type: "GET_HATS" });
   }, []);
 
@@ -65,12 +64,18 @@ function UserPage() {
 
   function editBtn() {
     console.log('edit btn click');
-    const editForm = document.getElementById("edit-form");
-    if (editForm.style.display === "block") {
-      editForm.style.display = "none";
-    } else {
-      editForm.style.display = "block";
-    }
+
+    let element = document.getElementsByClassName("edit-form")
+    console.log(element);
+    element[0].classList.toggle("hidden");
+    // element.classList.toggle("hidden");
+
+    // const editForm = document.getElementById("edit-form");
+    // if (editForm.style.display === "none") {
+    //   editForm.style.display = "block";
+    // } else {
+    //   editForm.style.display = "none";
+    // }
 
   }
 
@@ -104,10 +109,11 @@ function UserPage() {
           className="btn"
           onClick={editBtn}>Edit</Button>
         <Paper
-          id="edit-form">
+        className="edit-form hidden">
         <>
       <h1>Edit Hat</h1>
-      <form onSubmit={(e) => editHat(e)}>
+      <form 
+        onSubmit={(e) => editHat(e)}>
         <TextField
           sx={{ m: 2 }}
           label="enter description"
