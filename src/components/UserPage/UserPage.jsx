@@ -6,7 +6,7 @@ import './UserPage.css'
 
 function UserPage() {
   const dispatch = useDispatch();
-
+  event.preventDefault();
   // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector((store) => store.user);
   const hats = useSelector((store) => store.setHats);
@@ -59,8 +59,19 @@ function UserPage() {
   }
 
   function editHat() {
-    
-  }
+    console.log('click editHat');
+    dispatch({
+      type: 'EDIT_HAT',
+      payload: {
+        description: editDescription,
+        photo_url: editUrl,
+        hat_color: editColor,
+        hat_style: editStyle,
+        hat_fabric: editFabric,
+        hat_vibe: editVibe
+      }
+    });
+  };
 
   function editBtn() {
     console.log('edit btn click');
@@ -116,69 +127,69 @@ function UserPage() {
         onSubmit={(e) => editHat(e)}>
         <TextField
           sx={{ m: 2 }}
-          label="enter description"
+          label="enter new description"
           onChange={editDescriptionChange}
           value={editDescription}
           type="text"
-          placeholder="description"
+          placeholder="new description"
           focused
         />
         <br />
         <TextField
           sx={{ m: 2}}
-          label="enter photo url"
+          label="enter new photo url"
           onChange={editUrlChange}
           value={editUrl}
           type="text"
-          placeholder="photo url"
+          placeholder="new photo url"
           focused
         />
         <br />
         <TextField
           sx={{ m: 2 }}
-          label="enter hat color"
+          label="enter new hat color"
           onChange={editColorChange}
           value={editColor}
           type="text"
-          placeholder="hat color"
-          required
+          placeholder="new hat color"
           focused
         />
         <br />
         <TextField
           sx={{ m: 2 }}
-          label="enter hat style"
+          label="enter new hat style"
           onChange={editStyleChange}
           value={editStyle}
           type="text"
-          placeholder="hat style"
-          required
+          placeholder="new hat style"
           focused
         />
         <br />
         <TextField
           sx={{ m: 2 }}
-          label="enter hat fabric"
+          label="enter new hat fabric"
           onChange={editFabricChange}
           value={editFabric}
           type="text"
-          placeholder="hat fabric"
-          required
+          placeholder="new hat fabric"
           focused
         />
         <br />
         <TextField
           sx={{ m: 2 }}
-          label="enter hat vibe"
+          label="enter new hat vibe"
           onChange={editVibeChange}
           value={editVibe}
           type="text"
-          placeholder="hat vibe"
-          required
+          placeholder="new hat vibe"
           focused
         />
         <br />
-        <Button type="submit" variant="outlined">
+        <Button 
+          type="submit" 
+          variant="contained"
+          onClick={editHat}
+          >
           Submit Edit
         </Button>
       </form>
