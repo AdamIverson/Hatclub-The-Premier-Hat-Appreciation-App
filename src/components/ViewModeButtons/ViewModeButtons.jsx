@@ -1,4 +1,3 @@
-import "./ViewModeButtons.css";
 import { Button, ButtonGroup } from "@mui/material";
 
 export default function ViewModeButtons() {
