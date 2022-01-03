@@ -2,9 +2,9 @@ import "./ViewModeButtons.css";
 import { Button, ButtonGroup } from "@mui/material";
 
 export default function ViewModeButtons() {
-  function openDyslexic() {
+  function lexendFont() {
     let element = document.body;
-    element.classList.toggle("open-dyslexic");
+    element.classList.toggle("lexend");
   }
 
   function darkMode() {
@@ -13,22 +13,22 @@ export default function ViewModeButtons() {
   }
   return (
     <div>
-      <ButtonGroup size="small"
-      sx={{ m: 2 }}>
+      <ButtonGroup size="small" sx={{ m: 2 }}>
         <Button
           className="btn"
           sx={{ m: 2 }}
           color="success"
           variant="contained"
-          onClick={openDyslexic}
+          onClick={lexendFont}
         >
-          OpenDyslexic
+          Lexend Font
         </Button>
         <Button
           sx={{ m: 2 }}
-          className="btn" 
-          variant="contained" 
-          onClick={darkMode}>
+          className="btn"
+          variant="contained"
+          onClick={darkMode}
+        >
           Daylight Mode
         </Button>
       </ButtonGroup>
