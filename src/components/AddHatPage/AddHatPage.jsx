@@ -127,7 +127,10 @@ function AddHatPage() {
           focused
         />
         <br />
-        <Button type="submit" variant="outlined">
+        <Button 
+          type="submit"
+          color="secondary"
+          variant="contained">
           Add One Hat
         </Button>
       </form>

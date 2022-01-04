@@ -14,8 +14,9 @@
 }
 
 .nav-title {
+  font-family: 'Lexend', sans-serif;
   font-size: 3rem;
-  font-weight: 700;
+  font-weight: 900;
   color: #f5f37d;
   padding-left: 10px;
   margin: 0;

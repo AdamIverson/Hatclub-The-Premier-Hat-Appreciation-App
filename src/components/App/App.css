@@ -7,7 +7,7 @@ body,
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0px;
-  background-color: #b0a5b1;
+  background-color: #f6f47cbe;
 }
 
 img {
@@ -82,7 +82,7 @@ Button
 }
 
 .dark-mode {
-  background-color: #ffffff;
+  background-color: #6d1b7c;
 }
 
 .hidden {

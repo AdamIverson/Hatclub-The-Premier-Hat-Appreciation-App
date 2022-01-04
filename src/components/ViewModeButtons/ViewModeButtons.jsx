@@ -16,7 +16,7 @@ export default function ViewModeButtons() {
         <Button
           className="btn"
           sx={{ m: 2 }}
-          color="success"
+          color="secondary"
           variant="contained"
           onClick={lexendFont}
         >
@@ -26,9 +26,10 @@ export default function ViewModeButtons() {
           sx={{ m: 2 }}
           className="btn"
           variant="contained"
+          color="secondary"
           onClick={darkMode}
         >
-          Daylight Mode
+          light/dark 
         </Button>
       </ButtonGroup>
     </div>
