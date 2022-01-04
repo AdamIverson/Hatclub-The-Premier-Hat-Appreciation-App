@@ -2,13 +2,15 @@ import { put, takeLatest } from "redux-saga/effects";
 import axios from "axios";
 
 function* editHat(action) {
-  console.log("action.payload:", action.payload);
+  console.log('editHat action:', action);
+  
+  console.log("action.payload:", action.payload.id);
   
 
   try {
     const response = yield axios({
       method: "PUT",
-      url: `/api/hat/${action.payload}`,
+      url: `/api/hat/${action.payload.id}`,
       data: {
         description: action.payload.description,
         photo_url: action.payload.photo_url,

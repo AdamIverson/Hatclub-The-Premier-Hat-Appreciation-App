@@ -80,18 +80,18 @@ router.put('/:id', (req, res) => {
     .then((result) => {
       console.log(result.rows);
         //access the "user_id" in .then(result) 
-      const authID = result.rows[0].user_id;
-      console.log(authID);
+      const authId = result.rows[0].creator_id;
+      console.log();
       
-      if (authID === req.user.id) {
+      if (authId === req.user.id) {
         const query2 = `UPDATE "hat"
                         SET "description"=$1, "photo_url"=$2, "hat_color"=$3, "hat_style"=$4, "hat_fabric"=$5, "hat_vibe"=$6
                         WHERE "id"=$7;`;
-        const values2 = [req.body.description, req.body.image_url, req.body.hat_color, req.body.hat_style, req.body.hat_fabric, req.body.hat_vibe, req.params.id]
+        const values2 = [req.body.description, req.body.photo_url, req.body.hat_color, req.body.hat_style, req.body.hat_fabric, req.body.hat_vibe, req.params.id]
         pool.query(query2, values2)
         .then(() => res.sendStatus(202))
         .catch((error) => {
-          console.log('joe you foresighted genius', error);
+          console.log('error:', error);
         })
       } else {
         //catch and send_status(4XX) don't have authentication
