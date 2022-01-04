@@ -68,4 +68,42 @@ router.delete('/:id', (req, res) => {
 })
 
 
+router.put('/:id', (req, res) => {
+  //req.params as "id" value of the item
+  // console.log(req.params.id);
+  // //req.user.id as value of "user_id"
+  console.log(req.user.id);
+
+  //check and see if the "user_id" value of the row "id" matches req.user.id
+  //query SELECT * FROM "item" WHERE "id" = req.params
+  pool.query(`SELECT * FROM "hat" WHERE "id"=$1`, [req.params.id])
+    .then((result) => {
+      console.log(result.rows);
+        //access the "user_id" in .then(result) 
+      const authID = result.rows[0].user_id;
+      console.log(authID);
+      
+      if (authID === req.user.id) {
+        const query2 = `UPDATE "hat"
+                        SET "description"=$1, "photo_url"=$2, "hat_color"=$3, "hat_style"=$4, "hat_fabric"=$5, "hat_vibe"=$6
+                        WHERE "id"=$7;`;
+        const values2 = [req.body.description, req.body.image_url, req.body.hat_color, req.body.hat_style, req.body.hat_fabric, req.body.hat_vibe, req.params.id]
+        pool.query(query2, values2)
+        .then(() => res.sendStatus(202))
+        .catch((error) => {
+          console.log('joe you foresighted genius', error);
+        })
+      } else {
+        //catch and send_status(4XX) don't have authentication
+        res.sendStatus(400);
+      }
+
+    })
+    //first query catch
+    .catch((error) => {
+      console.log(error);
+    })
+  // endpoint functionality
+});
+
 module.exports = router;

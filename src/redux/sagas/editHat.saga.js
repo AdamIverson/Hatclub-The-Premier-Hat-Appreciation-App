@@ -3,6 +3,7 @@ import axios from "axios";
 
 function* editHat(action) {
   console.log("action.payload:", action.payload);
+  
 
   try {
     const response = yield axios({

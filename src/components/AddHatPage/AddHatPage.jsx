@@ -124,7 +124,7 @@ function AddHatPage() {
           type="text"
           placeholder="hat vibe"
           required
-          focused
+          // focused
         />
         <br />
         <Button 

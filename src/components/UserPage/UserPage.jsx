@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import { useDispatch, useSelector } from 'react-redux';
-import { Box, Button, Paper, TextField } from '@mui/material';
+import { Box, Button, Grid, Paper, TextField } from '@mui/material';
 import './UserPage.css'
 
 function UserPage() {
@@ -12,17 +12,19 @@ function UserPage() {
   const hats = useSelector((store) => store.setHats);
 
   useEffect(() => {
-    getRandomHatId();
+    // getRandomHatId();
     // editBtn();
     dispatch({ type: "GET_HATS" });
   }, []);
 
-  let [editDescription, setEditDescription] = useState("");
-  let [editUrl, setEditUrl] = useState("");
-  let [editColor, setEditColor] = useState("");
-  let [editStyle, setEditStyle] = useState("");
-  let [editFabric, setEditFabric] = useState("");
-  let [editVibe, setEditVibe] = useState("");
+  console.log('user.id:', user.id);
+
+  const [editDescription, setEditDescription] = useState("");
+  const [editUrl, setEditUrl] = useState("");
+  const [editColor, setEditColor] = useState("");
+  const [editStyle, setEditStyle] = useState("");
+  const [editFabric, setEditFabric] = useState("");
+  const [editVibe, setEditVibe] = useState("");
 
   const editDescriptionChange = (e) => {
     setEditDescription(e.target.value);
@@ -114,12 +116,15 @@ function UserPage() {
       </Box>
       <h2>Your Hats</h2>
       <Box>
-        <img src="http://www.adamiversonphotography.com/uploads/1/0/7/0/107020049/film-beetle-convertible-1_orig.jpg"></img>
-        <Button
+        {hats.map((hat) => (
+          <Grid key={hat.id} item xs={6}>
+            <img src={hat.photo_url}></img>
+            <Button
           variant="contained"
           className="btn"
           onClick={editBtn}>Edit</Button>
-        <Paper
+
+<Paper
         className="edit-form hidden">
         <>
       <h1>Edit Hat</h1>
@@ -195,6 +200,89 @@ function UserPage() {
       </form>
     </>
         </Paper>
+
+          </Grid>
+        ))}
+        {/* <Button
+          variant="contained"
+          className="btn"
+          onClick={editBtn}>Edit</Button> */}
+        {/* <Paper
+        className="edit-form hidden">
+        <>
+      <h1>Edit Hat</h1>
+      <form 
+        onSubmit={(e) => editHat(e)}>
+        <TextField
+          sx={{ m: 2 }}
+          label="enter new description"
+          onChange={editDescriptionChange}
+          value={editDescription}
+          type="text"
+          placeholder="new description"
+          focused
+        />
+        <br />
+        <TextField
+          sx={{ m: 2}}
+          label="enter new photo url"
+          onChange={editUrlChange}
+          value={editUrl}
+          type="text"
+          placeholder="new photo url"
+          focused
+        />
+        <br />
+        <TextField
+          sx={{ m: 2 }}
+          label="enter new hat color"
+          onChange={editColorChange}
+          value={editColor}
+          type="text"
+          placeholder="new hat color"
+          focused
+        />
+        <br />
+        <TextField
+          sx={{ m: 2 }}
+          label="enter new hat style"
+          onChange={editStyleChange}
+          value={editStyle}
+          type="text"
+          placeholder="new hat style"
+          focused
+        />
+        <br />
+        <TextField
+          sx={{ m: 2 }}
+          label="enter new hat fabric"
+          onChange={editFabricChange}
+          value={editFabric}
+          type="text"
+          placeholder="new hat fabric"
+          focused
+        />
+        <br />
+        <TextField
+          sx={{ m: 2 }}
+          label="enter new hat vibe"
+          onChange={editVibeChange}
+          value={editVibe}
+          type="text"
+          placeholder="new hat vibe"
+          focused
+        />
+        <br />
+        <Button 
+          type="submit" 
+          variant="contained"
+          onClick={editHat}
+          >
+          Submit Edit
+        </Button>
+      </form>
+    </>
+        </Paper> */}
       </Box>
       <LogOutButton className="btn" />
     </div>
