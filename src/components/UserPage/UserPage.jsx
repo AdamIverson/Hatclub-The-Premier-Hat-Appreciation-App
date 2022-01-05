@@ -1,32 +1,112 @@
-import React, { useEffect } from 'react';
-import LogOutButton from '../LogOutButton/LogOutButton';
-import { useDispatch, useSelector } from 'react-redux';
-import { Box, Button } from '@mui/material';
+import React, { useEffect, useState } from "react";
+import LogOutButton from "../LogOutButton/LogOutButton";
+import { useDispatch, useSelector } from "react-redux";
+import { Box, Button, Grid, Paper, TextField } from "@mui/material";
+import "./UserPage.css";
 
 function UserPage() {
   const dispatch = useDispatch();
-
+  event.preventDefault();
   // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector((store) => store.user);
   const hats = useSelector((store) => store.setHats);
 
   useEffect(() => {
-    getRandomHatId();
+    // getRandomHatId();
     dispatch({ type: "GET_HATS" });
   }, []);
 
-  const maxHats = hats.length;
+  console.log("user.id:", user.id);
 
-  function getRandomHatId(min, max) {
+  const [editDescription, setEditDescription] = useState("");
+  const [editUrl, setEditUrl] = useState("");
+  const [editColor, setEditColor] = useState("");
+  const [editStyle, setEditStyle] = useState("");
+  const [editFabric, setEditFabric] = useState("");
+  const [editVibe, setEditVibe] = useState("");
+  const [editId, setEditId] = useState("");
 
-    min = Math.ceil(1);
-    max = Math.floor(maxHats)
+  const editDescriptionChange = (e) => {
+    setEditDescription(e.target.value);
+  };
 
-    return Math.floor(Math.random() * (max - min) + min)
+  const editUrlChange = (e) => {
+    setEditUrl(e.target.value);
+  };
+
+  const editColorChange = (e) => {
+    setEditColor(e.target.value);
+  };
+
+  const editStyleChange = (e) => {
+    setEditStyle(e.target.value);
+  };
+
+  const editFabricChange = (e) => {
+    setEditFabric(e.target.value);
+  };
+
+  const editVibeChange = (e) => {
+    setEditVibe(e.target.value);
+  };
+
+  // const captureID = (e) => {
+  //   setEditId(e.target.id)
+  // }
+  // const maxHats = hats.length;
+
+  // function getRandomHatId(min, max) {
+  //   min = Math.ceil(1);
+  //   max = Math.floor(maxHats);
+
+  //   return Math.floor(Math.random() * (max - min) + min);
+  // }
+
+  function clearInputs() {
+    setEditDescription("");
+    setEditUrl("");
+    setEditColor("");
+    setEditStyle("");
+    setEditFabric("");
+    setEditVibe("");
+    setEditId("");
   }
 
-// console.log('random hat id:', getRandomHatId(hats.length));
-// console.log(hats[getRandomHatId()].description);
+  function editHat() {
+    console.log("click editHat");
+    dispatch({
+      type: "EDIT_HAT",
+      payload: {
+        description: editDescription,
+        photo_url: editUrl,
+        hat_color: editColor,
+        hat_style: editStyle,
+        hat_fabric: editFabric,
+        hat_vibe: editVibe,
+        id: editId,
+      },
+    });
+    clearInputs();
+  }
+
+  const editBtn = (e) => {
+    // console.log("edit btn click", e.target.id);
+    setEditId(e.target.id);
+
+
+    // let element = document.getElementsByClassName("edit-form");
+    // element.classList.toggle("hidden");
+
+    // // const editForm = document.getElementById("edit-form");
+    // if (editForm.style.display === "none") {
+    //   editForm.style.display = "block";
+    // } else {
+    //   editForm.style.display = "none";
+    // }
+  }
+
+  // console.log('random hat id:', getRandomHatId(hats.length));
+  // console.log(hats[getRandomHatId()].description);
   return (
     <div className="container">
       <h1>Welcome, {user.username}!</h1>
@@ -46,6 +126,169 @@ function UserPage() {
           >
           </img>
         ))} */}
+      </Box>
+      <h2>Your Hats</h2>
+      <Box>
+        {hats.map((hat) => (
+          <Box key={hat.id} item xs={6}>
+            <img src={hat.photo_url}></img>
+            <p>HAT ID: {hat.id}</p>
+            <Button id={hat.id} variant="contained" className="btn" onClick={editBtn}>
+              Edit
+            </Button>
+
+            <Paper className="edit-form">
+              <>
+                <h1>Edit Hat</h1>
+                <form onSubmit={(e) => editHat(e)}>
+                  <TextField
+                    sx={{ m: 2 }}
+                    label="enter new description"
+                    onChange={editDescriptionChange}
+                    value={editDescription}
+                    type="text"
+                    placeholder="new description"
+                    focused
+                  />
+                  <br />
+                  <TextField
+                    sx={{ m: 2 }}
+                    label="enter new photo url"
+                    onChange={editUrlChange}
+                    value={editUrl}
+                    type="text"
+                    placeholder="new photo url"
+                    focused
+                  />
+                  <br />
+                  <TextField
+                    sx={{ m: 2 }}
+                    label="enter new hat color"
+                    onChange={editColorChange}
+                    value={editColor}
+                    type="text"
+                    placeholder="new hat color"
+                    focused
+                  />
+                  <br />
+                  <TextField
+                    sx={{ m: 2 }}
+                    label="enter new hat style"
+                    onChange={editStyleChange}
+                    value={editStyle}
+                    type="text"
+                    placeholder="new hat style"
+                    focused
+                  />
+                  <br />
+                  <TextField
+                    sx={{ m: 2 }}
+                    label="enter new hat fabric"
+                    onChange={editFabricChange}
+                    value={editFabric}
+                    type="text"
+                    placeholder="new hat fabric"
+                    focused
+                  />
+                  <br />
+                  <TextField
+                    sx={{ m: 2 }}
+                    label="enter new hat vibe"
+                    onChange={editVibeChange}
+                    value={editVibe}
+                    type="text"
+                    placeholder="new hat vibe"
+                    focused
+                  />
+                  <br />
+                  <Button type="submit" variant="contained" onClick={editHat}>
+                    Submit Edit
+                  </Button>
+                </form>
+              </>
+            </Paper>
+          </Box>
+        ))}
+        {/* <Button
+          variant="contained"
+          className="btn"
+          onClick={editBtn}>Edit</Button> */}
+        {/* <Paper
+        className="edit-form hidden">
+        <>
+      <h1>Edit Hat</h1>
+      <form 
+        onSubmit={(e) => editHat(e)}>
+        <TextField
+          sx={{ m: 2 }}
+          label="enter new description"
+          onChange={editDescriptionChange}
+          value={editDescription}
+          type="text"
+          placeholder="new description"
+          focused
+        />
+        <br />
+        <TextField
+          sx={{ m: 2}}
+          label="enter new photo url"
+          onChange={editUrlChange}
+          value={editUrl}
+          type="text"
+          placeholder="new photo url"
+          focused
+        />
+        <br />
+        <TextField
+          sx={{ m: 2 }}
+          label="enter new hat color"
+          onChange={editColorChange}
+          value={editColor}
+          type="text"
+          placeholder="new hat color"
+          focused
+        />
+        <br />
+        <TextField
+          sx={{ m: 2 }}
+          label="enter new hat style"
+          onChange={editStyleChange}
+          value={editStyle}
+          type="text"
+          placeholder="new hat style"
+          focused
+        />
+        <br />
+        <TextField
+          sx={{ m: 2 }}
+          label="enter new hat fabric"
+          onChange={editFabricChange}
+          value={editFabric}
+          type="text"
+          placeholder="new hat fabric"
+          focused
+        />
+        <br />
+        <TextField
+          sx={{ m: 2 }}
+          label="enter new hat vibe"
+          onChange={editVibeChange}
+          value={editVibe}
+          type="text"
+          placeholder="new hat vibe"
+          focused
+        />
+        <br />
+        <Button 
+          type="submit" 
+          variant="contained"
+          onClick={editHat}
+          >
+          Submit Edit
+        </Button>
+      </form>
+    </>
+        </Paper> */}
       </Box>
       <LogOutButton className="btn" />
     </div>

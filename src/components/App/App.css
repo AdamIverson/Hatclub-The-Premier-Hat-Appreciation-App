@@ -7,7 +7,7 @@ body,
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0px;
-  background-color: #b0a5b1;
+  background-color: #f6f47cbe;
 }
 
 img {
@@ -21,6 +21,7 @@ Container
 
 .container {
   padding: 20px;
+  width: 100%;
 }
 
 /* --------------------------------------------------------------------------------
@@ -81,9 +82,12 @@ Button
 }
 
 .dark-mode {
-  background-color: #ffffff;
+  background-color: black;
 }
 
+.hidden {
+  display: none;
+}
 /* --------------------------------------------------------------------------------
 Alert
 -------------------------------------------------------------------------------- */

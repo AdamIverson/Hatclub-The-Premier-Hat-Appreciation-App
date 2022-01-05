@@ -124,10 +124,13 @@ function AddHatPage() {
           type="text"
           placeholder="hat vibe"
           required
-          focused
+          // focused
         />
         <br />
-        <Button type="submit" variant="outlined">
+        <Button 
+          type="submit"
+          color="secondary"
+          variant="contained">
           Add One Hat
         </Button>
       </form>
