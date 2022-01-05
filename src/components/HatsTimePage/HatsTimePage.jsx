@@ -25,7 +25,13 @@ export default function HatsTimePage() {
   }, []);
 
   const favHat = (id) => {
-    console.log("fav button click");
+    console.log("fav button click", id);
+    dispatch({
+      type: "ADD_FAV",
+      payload: {
+        id: id
+      }
+    });
   };
 
   const deleteHat = (id) => {
@@ -53,7 +59,8 @@ export default function HatsTimePage() {
             <ButtonGroup className="buttonGroup" size="small">
               <Button
                 sx={{ m: 1 }}
-                onClick={favHat} 
+                onClick={(e) => favHat(hat.id)}
+                id={hat.id}
                 className="photoButton"
                 variant="contained">
                 FAV
