@@ -13,7 +13,6 @@ function UserPage() {
 
   useEffect(() => {
     // getRandomHatId();
-    // editBtn();
     dispatch({ type: "GET_HATS" });
   }, []);
 
@@ -91,14 +90,14 @@ function UserPage() {
   }
 
   const editBtn = (e) => {
-    console.log("edit btn click", e.target.id);
+    // console.log("edit btn click", e.target.id);
     setEditId(e.target.id);
 
 
-    let element = document.getElementsByClassName("edit-form");
+    // let element = document.getElementsByClassName("edit-form");
     // element.classList.toggle("hidden");
 
-    // const editForm = document.getElementById("edit-form");
+    // // const editForm = document.getElementById("edit-form");
     // if (editForm.style.display === "none") {
     //   editForm.style.display = "block";
     // } else {
