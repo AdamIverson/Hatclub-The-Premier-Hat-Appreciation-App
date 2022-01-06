@@ -55,6 +55,10 @@ export default function HatsTimePage() {
               loading="lazy"
               key={hat.id}
             />
+            <ul>
+              <li>Description: {hat.description}</li>
+              <li>Vibe: {hat.hat_vibe}</li>
+            </ul>
             {/* <br /> */}
             <ButtonGroup className="buttonGroup" size="small">
               <Button

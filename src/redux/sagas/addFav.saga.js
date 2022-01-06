@@ -1,12 +1,13 @@
 import { put, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
 
-function* addFav(action){
-  console.log('action.payload:', action.payload)
+function* addFav(action){  
+  console.log('action.payload:', action.payload.id)
+  
   try {
     const response = yield axios({
       method: 'POST',
-      url: '/api/fav',
+      url: `/api/fav/`,
       data: action.payload
     })
     // call the dispatch that GETs the shelf items

@@ -2,13 +2,12 @@ import { put, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
 
 function* getFavs(action) {
-  console.log('*************************');
-  
-  console.log('action:', action);
+  console.log('getFavs action:', action);
+
   try {
     const response = yield axios({
       method: 'GET',
-      url: '/api/fav',
+      url: `/api/fav`,
     })
     yield put({
       type: 'SET_FAVS',
