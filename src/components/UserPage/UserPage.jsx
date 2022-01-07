@@ -74,6 +74,7 @@ function UserPage() {
   // }
 
   function editHat() {
+    e.preventDefault();
     console.log("click editHat");
     dispatch({
       type: "EDIT_HAT",
@@ -205,7 +206,7 @@ function UserPage() {
                     focused
                   />
                   <br />
-                  <Button type="submit" variant="contained" onClick={editHat}>
+                  <Button type="submit" variant="contained">
                     Submit Edit
                   </Button>
                 </form>

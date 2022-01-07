@@ -1,11 +1,9 @@
 import react, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
 import { Box, Button } from '@mui/material';
 
 function FavoritesPage() {
   const dispatch = useDispatch();
-  const params = useParams();
   const user = useSelector((store) => store.user);
   const favs = useSelector((store) => store.setFavs);
 

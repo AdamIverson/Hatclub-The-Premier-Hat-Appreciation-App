@@ -30,8 +30,8 @@ CREATE TABLE "user" (
 		"id" SERIAL PRIMARY KEY,
 		"user_id" INT,
 		"hat_id" INT,
-		FOREIGN KEY (user_id) REFERENCES "user"(id),
-		FOREIGN KEY (hat_id) REFERENCES "hat"(id)
+		FOREIGN KEY (user_id) REFERENCES "user"(id) ON DELETE CASCADE
+		FOREIGN KEY (hat_id) REFERENCES "hat"(id) ON DELETE CASCADE
 	);
 
   INSERT INTO "favorite" ("user_id", "hat_id")
