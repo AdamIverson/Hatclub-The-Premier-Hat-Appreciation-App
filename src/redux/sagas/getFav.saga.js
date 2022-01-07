@@ -8,7 +8,7 @@ function* getFavs(action) {
   try {
     const response = yield axios({
       method: 'GET',
-      url: `/api/fav/${action.payload}`,
+      url: `/api/fav`,
     })
     yield put({
       type: 'SET_FAVS',

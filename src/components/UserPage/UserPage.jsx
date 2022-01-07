@@ -16,7 +16,7 @@ function UserPage() {
     dispatch({ type: "GET_HATS" });
   }, []);
 
-  console.log("user.id:", user.id);
+  console.log("UserPage.jsx user.id:", user.id);
 
   const [editDescription, setEditDescription] = useState("");
   const [editUrl, setEditUrl] = useState("");
@@ -27,6 +27,7 @@ function UserPage() {
   const [editId, setEditId] = useState("");
 
   const editDescriptionChange = (e) => {
+    console.log("descriptionChange:", e.target.value);
     setEditDescription(e.target.value);
   };
 
@@ -62,15 +63,15 @@ function UserPage() {
   //   return Math.floor(Math.random() * (max - min) + min);
   // }
 
-  function clearInputs() {
-    setEditDescription("");
-    setEditUrl("");
-    setEditColor("");
-    setEditStyle("");
-    setEditFabric("");
-    setEditVibe("");
-    setEditId("");
-  }
+  // function clearInputs() {
+  //   setEditDescription("");
+  //   setEditUrl("");
+  //   setEditColor("");
+  //   setEditStyle("");
+  //   setEditFabric("");
+  //   setEditVibe("");
+  //   setEditId("");
+  // }
 
   function editHat() {
     console.log("click editHat");
@@ -86,13 +87,15 @@ function UserPage() {
         id: editId,
       },
     });
-    clearInputs();
+    // clearInputs();
   }
 
   const editBtn = (e) => {
     e.preventDefault();
     // console.log("edit btn click", e.target.id);
     setEditId(e.target.id);
+    console.log('e.target.id:', e.target.id);
+    console.log('editId:', editId);
 
 
     // let element = document.getElementsByClassName("edit-form");
