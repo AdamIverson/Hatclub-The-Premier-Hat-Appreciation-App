@@ -52,7 +52,7 @@ function Nav() {
               Profile
             </Link>
 
-            <Link className="navLink" to="/favorites">
+            <Link className="navLink" to="/favorites/:id">
               favorhats
             </Link>
 

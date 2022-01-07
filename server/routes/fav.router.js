@@ -5,14 +5,19 @@ const {
   rejectUnauthenticated,
 } = require("../modules/authentication-middleware");
 
-router.get("/", (req, res) => {
+router.get("/:id", (req, res) => {
   console.log("get fav route req.user:", req.user);
+  console.log("req.params.id:", req.params.id);
+  
+  const idToGet = req.user.id;
+  const sqlText = `
+  SELECT * FROM "hat"
+    JOIN "favorite"
+    ON "hat"."id"="favorite"."hat_id" 
+    WHERE "user_id"=$1;
+  `;
   pool
-    .query(
-      `SELECT * FROM "hat"
-	         JOIN "favorite"
-	          ON "hat"."id"="favorite"."hat_id";`
-    )
+    .query(sqlText, [idToGet])
     .then((results) => res.send(results.rows))
     .catch((error) => {
       console.log('ERROR selecting from "Favorite"', error);

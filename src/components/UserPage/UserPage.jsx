@@ -6,7 +6,7 @@ import "./UserPage.css";
 
 function UserPage() {
   const dispatch = useDispatch();
-  event.preventDefault();
+  // event.preventDefault();
   // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector((store) => store.user);
   const hats = useSelector((store) => store.setHats);
@@ -90,6 +90,7 @@ function UserPage() {
   }
 
   const editBtn = (e) => {
+    e.preventDefault();
     // console.log("edit btn click", e.target.id);
     setEditId(e.target.id);
 
