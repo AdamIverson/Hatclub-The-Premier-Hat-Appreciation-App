@@ -4,7 +4,7 @@ import axios from "axios";
 function* editHat(action) {
   console.log('editHat action:', action);
   
-  console.log("action.payload:", action.payload.id);
+  console.log("action.payload:", action.payload);
   
 
   try {
