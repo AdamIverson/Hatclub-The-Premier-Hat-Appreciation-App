@@ -91,6 +91,14 @@ function UserPage() {
     // clearInputs();
   }
 
+  const deleteHat = (id) => {
+    console.log("delete button click");
+    dispatch({
+      type: "DELETE_HAT",
+      payload: id,
+    });
+  };
+
   const editBtn = (e) => {
     e.preventDefault();
     // console.log("edit btn click", e.target.id);
@@ -141,6 +149,15 @@ function UserPage() {
             <Button id={hat.id} variant="contained" className="btn" onClick={editBtn}>
               Edit
             </Button>
+            <Button
+                sx={{ m: 1 }}
+                onClick={(e) => deleteHat(hat.id)}
+                className="photoButton"
+                variant="contained"
+                color="warning"
+              >
+                DELETE
+              </Button>
 
             <Paper className="edit-form">
               <>

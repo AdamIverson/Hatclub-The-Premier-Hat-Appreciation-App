@@ -34,14 +34,6 @@ export default function HatsTimePage() {
     });
   };
 
-  const deleteHat = (id) => {
-    console.log("delete button click");
-    dispatch({
-      type: "DELETE_HAT",
-      payload: id,
-    });
-  };
-
   return (
     <Box>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
