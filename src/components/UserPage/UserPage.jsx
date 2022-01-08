@@ -9,12 +9,12 @@ function UserPage() {
   // event.preventDefault();
   // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector((store) => store.user);
-  const hats = useSelector((store) => store.setHats);
+  const hats = useSelector((store) => store.setUserHats);
 
   useEffect(() => {
     // getRandomHatId();
-    dispatch({ type: "GET_HATS" });
-  }, []);
+    dispatch({ type: "GET_USER_HATS" });
+  }, [user.id]);
 
   console.log("UserPage.jsx user.id:", user.id);
 
@@ -146,6 +146,8 @@ function UserPage() {
           <Box key={hat.id} item xs={6}>
             <img src={hat.photo_url}></img>
             <p>HAT ID: {hat.id}</p>
+            <p>Creator ID: {hat.creator_id}</p>
+            <p>Description: {hat.description}</p>
             <Button id={hat.id} variant="contained" className="btn" onClick={editBtn}>
               Edit
             </Button>

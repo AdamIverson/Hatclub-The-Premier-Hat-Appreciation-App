@@ -11,8 +11,8 @@ router.get('/', (req, res) => {
   .catch ((error) => {
     console.log ('ERROR SELECTING FROM "HAT"', error)
     res.sendStatus(500)
-  })
-})
+  });
+});
 
 router.post('/', rejectUnauthenticated, (req, res) => {
   console.log(req.user);
