@@ -97,6 +97,7 @@ function UserPage() {
       type: "DELETE_HAT",
       payload: id,
     });
+    dispatch({ type: "GET_USER_HATS" });
   };
 
   const editBtn = (e) => {
