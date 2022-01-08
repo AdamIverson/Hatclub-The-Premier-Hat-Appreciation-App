@@ -6,14 +6,14 @@ import "./UserPage.css";
 
 function UserPage() {
   const dispatch = useDispatch();
-  // event.preventDefault();
+
   // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector((store) => store.user);
   const hats = useSelector((store) => store.setUserHats);
 
+
   useEffect(() => {
-    // getRandomHatId();
-    dispatch({ type: "GET_USER_HATS" });
+      dispatch({ type: "GET_USER_HATS" });
   }, [user.id]);
 
   console.log("UserPage.jsx user.id:", user.id);
@@ -51,17 +51,10 @@ function UserPage() {
     setEditVibe(e.target.value);
   };
 
-  // const captureID = (e) => {
-  //   setEditId(e.target.id)
-  // }
-  // const maxHats = hats.length;
+  const captureID = (e) => {
+    setEditId(e.target.id)
+  }
 
-  // function getRandomHatId(min, max) {
-  //   min = Math.ceil(1);
-  //   max = Math.floor(maxHats);
-
-  //   return Math.floor(Math.random() * (max - min) + min);
-  // }
 
   // function clearInputs() {
   //   setEditDescription("");
@@ -125,22 +118,6 @@ function UserPage() {
     <div className="container">
       <h1>Welcome, {user.username}!</h1>
       <p>Your ID is: {user.id}</p>
-      <h2>Rando Hat</h2>
-      <Box>
-        {/* <img
-          src={`${hats[getRandomHatId()].photo_url}`}
-          alt={`${hats[getRandomHatId()].description}`}>
-        </img> */}
-        {/* <p>{`${hats[getRandomHatId()].description}`}</p> */}
-
-        {/* {hats.map((hat) => (
-          <img
-          src={`${hat.photo_url}`}
-          alt={hat.description}
-          >
-          </img>
-        ))} */}
-      </Box>
       <h2>Your Hats</h2>
       <Box>
         {hats.map((hat) => (
