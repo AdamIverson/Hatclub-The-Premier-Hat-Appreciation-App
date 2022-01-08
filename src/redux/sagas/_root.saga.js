@@ -8,7 +8,7 @@ import deleteHatSaga from './deleteHat.saga';
 import editHatSaga from './editHat.saga';
 import getFavSaga from './getFav.saga';
 import addFavSaga from './addFav.saga';
-import getUserHatSaga from './getFav.saga';
+import getUserHatSaga from './getUserHats.saga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.

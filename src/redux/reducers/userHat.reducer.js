@@ -1,5 +1,5 @@
 const setUserHats = (state = [], action) => {
-  console.log('fav.reducer action:', action)
+  console.log('userHat.reducer action:', action)
   
         switch (action.type) {
             case 'SET_USER_HATS':

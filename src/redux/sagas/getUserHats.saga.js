@@ -6,7 +6,7 @@ function* getUserHats(action) {
   try {
     const response = yield axios({
       method: 'GET',
-      url: '/api/hat',
+      url: '/api/userHat',
     })
     yield put({
       type: 'SET_USER_HATS',
