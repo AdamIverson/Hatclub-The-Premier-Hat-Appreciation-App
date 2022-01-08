@@ -66,7 +66,7 @@ function UserPage() {
   //   setEditId("");
   // }
 
-  function editHat() {
+  function editHat(e) {
     e.preventDefault();
     console.log("click editHat");
     dispatch({
@@ -81,6 +81,7 @@ function UserPage() {
         id: editId,
       },
     });
+    dispatch({ type: "GET_USER_HATS" });
     // clearInputs();
   }
 
@@ -93,22 +94,30 @@ function UserPage() {
     dispatch({ type: "GET_USER_HATS" });
   };
 
-const toggleClass = (e) => {
-  console.log("toggleClass CLICK");
-  let el = document.getElementById("edit-form");
+// const toggleClass = (e) => {
+//   console.log("toggleClass CLICK");
+//   let el = document.getElementById(e.target.value)
+//   // let el = document.getElementById(`${hats[0].id}`);
+//   if (el.className === "hidden") {
+//     el.className = "block";
+//   } else {
+//     el.className = "hidden";
+//   }
+// }
+
+  const editBtn = (e) => {
+    console.log("e.target.value:", e.target.value);
+
+    setEditId(e.target.value);
+
+    let el = document.getElementById(e.target.value)
+  // let el = document.getElementById(`${hats[0].id}`);
   if (el.className === "hidden") {
     el.className = "block";
   } else {
     el.className = "hidden";
-  }
-}
-
-  const editBtn = (e) => {
-    console.log("edit btn click", e.target.id);
-    setEditId(e.target.id);
-    console.log('e.target.id:', e.target.id);
-    console.log("e.target.");
-    toggleClass();
+  };
+    // toggleClass();
     // e.target.classList.add("hidden")
 
 
@@ -136,7 +145,11 @@ const toggleClass = (e) => {
             <p>HAT ID: {hat.id}</p>
             <p>Creator ID: {hat.creator_id}</p>
             <p>Description: {hat.description}</p>
-            <Button id={hat.id} variant="contained" className="btn" onClick={editBtn}>
+            <Button
+              value={hat.id}
+              variant="contained" 
+              className={`${hat.id}`} 
+              onClick={editBtn}>
               Edit
             </Button>
             <Button
@@ -149,7 +162,7 @@ const toggleClass = (e) => {
                 DELETE
               </Button>
 
-          <div id="edit-form" className="hidden">
+          <div id={hat.id} className="hidden">
             <Paper>
               <>
                 <h1>Edit Hat</h1>
