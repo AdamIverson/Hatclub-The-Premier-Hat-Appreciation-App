@@ -48,6 +48,7 @@ export default function HatsTimePage() {
               key={hat.id}
             />
             <ul>
+              <li>Creator ID: {hat.creator_id}</li>
               <li>Description: {hat.description}</li>
               <li>Vibe: {hat.hat_vibe}</li>
             </ul>

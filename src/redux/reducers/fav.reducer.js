@@ -1,5 +1,5 @@
 const setFavs = (state = [], action) => {
-  console.log('fav.reducer action:', action)
+  console.log('fav.reducer action what:', action)
   
         switch (action.type) {
             case 'SET_FAVS':
