@@ -93,18 +93,30 @@ function UserPage() {
     dispatch({ type: "GET_USER_HATS" });
   };
 
+const toggleClass = (e) => {
+  console.log("toggleClass CLICK");
+  let el = document.getElementById("edit-form");
+  if (el.className === "hidden") {
+    el.className = "block";
+  } else {
+    el.className = "hidden";
+  }
+}
+
   const editBtn = (e) => {
-    e.preventDefault();
-    // console.log("edit btn click", e.target.id);
+    console.log("edit btn click", e.target.id);
     setEditId(e.target.id);
     console.log('e.target.id:', e.target.id);
-    console.log('editId:', editId);
+    console.log("e.target.");
+    toggleClass();
+    // e.target.classList.add("hidden")
 
 
-    // let element = document.getElementsByClassName("edit-form");
+    // document.getElementsByClassName("edit-form")[0].toggle("hidden");
+    // console.log('element:', element);
     // element.classList.toggle("hidden");
 
-    // // const editForm = document.getElementById("edit-form");
+    // const editForm = document.getElementsByClassName("edit-form");
     // if (editForm.style.display === "none") {
     //   editForm.style.display = "block";
     // } else {
@@ -112,8 +124,6 @@ function UserPage() {
     // }
   }
 
-  // console.log('random hat id:', getRandomHatId(hats.length));
-  // console.log(hats[getRandomHatId()].description);
   return (
     <div className="container">
       <h1>Welcome, {user.username}!</h1>
@@ -139,10 +149,13 @@ function UserPage() {
                 DELETE
               </Button>
 
-            <Paper className="edit-form">
+          <div id="edit-form" className="hidden">
+            <Paper>
               <>
                 <h1>Edit Hat</h1>
-                <form onSubmit={(e) => editHat(e)}>
+                <form 
+                  // className="edit-form hidden"
+                  onSubmit={(e) => editHat(e)}>
                   <TextField
                     sx={{ m: 2 }}
                     label="enter new description"
@@ -209,6 +222,7 @@ function UserPage() {
                 </form>
               </>
             </Paper>
+            </div>
           </Box>
         ))}
         {/* <Button
