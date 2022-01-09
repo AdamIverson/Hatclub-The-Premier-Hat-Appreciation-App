@@ -10,7 +10,7 @@ function UserPage() {
   // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector((store) => store.user);
   const hats = useSelector((store) => store.setUserHats);
-
+console.log('hats', hats);
 
   useEffect(() => {
       dispatch({ type: "GET_USER_HATS" });
@@ -51,9 +51,9 @@ function UserPage() {
     setEditVibe(e.target.value);
   };
 
-  const captureID = (e) => {
-    setEditId(e.target.id)
-  }
+  // const captureID = (e) => {
+  //   setEditId(e.target.id)
+  // }
 
 
   // function clearInputs() {
@@ -67,7 +67,7 @@ function UserPage() {
   // }
 
   function editHat(e) {
-    e.preventDefault();
+    // e.preventDefault();
     console.log("click editHat");
     dispatch({
       type: "EDIT_HAT",
@@ -81,7 +81,10 @@ function UserPage() {
         id: editId,
       },
     });
+    // let el = document.getElementById(e.target.value);
+    // el.className = "hidden";
     dispatch({ type: "GET_USER_HATS" });
+    
     // clearInputs();
   }
 
@@ -92,6 +95,7 @@ function UserPage() {
       payload: id,
     });
     dispatch({ type: "GET_USER_HATS" });
+    // editBtn();
   };
 
 // const toggleClass = (e) => {
@@ -145,6 +149,11 @@ function UserPage() {
             <p>HAT ID: {hat.id}</p>
             <p>Creator ID: {hat.creator_id}</p>
             <p>Description: {hat.description}</p>
+            <p>Color: {hat.hat_color}</p>
+            <p>Style: {hat.hat_style}</p>
+            <p>Fabric: {hat.hat_fabric}</p>
+            <p>Vibe: {hat.hat_vibe}</p>
+
             <Button
               value={hat.id}
               variant="contained" 
@@ -173,7 +182,7 @@ function UserPage() {
                     sx={{ m: 2 }}
                     label="enter new description"
                     onChange={editDescriptionChange}
-                    value={editDescription}
+                    value={hat.description || ''}
                     type="text"
                     placeholder="new description"
                     focused
@@ -183,7 +192,7 @@ function UserPage() {
                     sx={{ m: 2 }}
                     label="enter new photo url"
                     onChange={editUrlChange}
-                    value={editUrl}
+                    value={editUrl || ''}
                     type="text"
                     placeholder="new photo url"
                     focused
