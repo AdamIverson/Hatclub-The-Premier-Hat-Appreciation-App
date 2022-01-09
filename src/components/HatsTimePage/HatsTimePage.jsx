@@ -14,11 +14,14 @@ import {
   NativeSelect,
 } from "@mui/material";
 import "./HatsTime.css";
+// import FavBtn from "../FavBtn/FavBtn";
 
 export default function HatsTimePage() {
   const dispatch = useDispatch();
+  const user = useSelector((store) => store.user);
   const hats = useSelector((store) => store.setHats);
   console.log(hats);
+  console.log("user.id:", user.id)
 
   useEffect(() => {
     dispatch({ type: "GET_HATS" });
@@ -29,11 +32,41 @@ export default function HatsTimePage() {
     dispatch({
       type: "ADD_FAV",
       payload: {
-        id: id
-      }
+        id: id,
+      },
     });
   };
 
+  function Test() {
+    if (!user.id) {
+   return <p>ope</p>
+  } else {
+    return <Button>Fav</Button>
+  }
+  }
+
+  // function FavBtn() {
+  //   {user.id ? 
+  //       <button>FAV</button>
+  //   :
+  //     <p>NOT FAVE</p>
+  // }
+  // //   if (user.id) {
+  // //   return (
+  // //     <Button
+  // //       sx={{ m: 1 }}
+  // //       onClick={(e) => favHat(hat.id)}
+  // //       id={props.id}
+  // //       className="photoButton"
+  // //       variant="contained"
+  // //     >
+  // //       FAV
+  // //     </Button>
+  // //   );
+  // // } else {
+  // //   return <p>Winner</p>;
+  // // }
+  // }
   return (
     <Box>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
@@ -47,14 +80,10 @@ export default function HatsTimePage() {
               loading="lazy"
               key={hat.id}
             />
-            <ul>
-              <li>Creator ID: {hat.creator_id}</li>
-              <li>Description: {hat.description}</li>
-              <li>Vibe: {hat.hat_vibe}</li>
-            </ul>
-            {/* <br /> */}
             <ButtonGroup className="buttonGroup" size="small">
-              <Button
+            <Test />
+
+              {/* <Button
                 sx={{ m: 1 }}
                 onClick={(e) => favHat(hat.id)}
                 id={hat.id}
@@ -70,8 +99,13 @@ export default function HatsTimePage() {
                 color="warning"
               >
                 DELETE
-              </Button>
+              </Button> */}
             </ButtonGroup>
+            <ul>
+              <li>Creator ID: {hat.creator_id}</li>
+              <li>Description: {hat.description}</li>
+              <li>Vibe: {hat.hat_vibe}</li>
+            </ul>
             {/* </Item> */}
           </Grid>
         ))}
