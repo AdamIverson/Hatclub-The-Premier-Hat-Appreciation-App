@@ -10,7 +10,7 @@ function UserPage() {
   // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector((store) => store.user);
   const hats = useSelector((store) => store.setUserHats);
-
+console.log('hats', hats);
 
   useEffect(() => {
       dispatch({ type: "GET_USER_HATS" });
@@ -51,9 +51,9 @@ function UserPage() {
     setEditVibe(e.target.value);
   };
 
-  const captureID = (e) => {
-    setEditId(e.target.id)
-  }
+  // const captureID = (e) => {
+  //   setEditId(e.target.id)
+  // }
 
 
   // function clearInputs() {
@@ -66,8 +66,8 @@ function UserPage() {
   //   setEditId("");
   // }
 
-  function editHat() {
-    e.preventDefault();
+  function editHat(e) {
+    // e.preventDefault();
     console.log("click editHat");
     dispatch({
       type: "EDIT_HAT",
@@ -81,6 +81,10 @@ function UserPage() {
         id: editId,
       },
     });
+    // let el = document.getElementById(e.target.value);
+    // el.className = "hidden";
+    dispatch({ type: "GET_USER_HATS" });
+    
     // clearInputs();
   }
 
@@ -91,20 +95,41 @@ function UserPage() {
       payload: id,
     });
     dispatch({ type: "GET_USER_HATS" });
+    // editBtn();
   };
 
+// const toggleClass = (e) => {
+//   console.log("toggleClass CLICK");
+//   let el = document.getElementById(e.target.value)
+//   // let el = document.getElementById(`${hats[0].id}`);
+//   if (el.className === "hidden") {
+//     el.className = "block";
+//   } else {
+//     el.className = "hidden";
+//   }
+// }
+
   const editBtn = (e) => {
-    e.preventDefault();
-    // console.log("edit btn click", e.target.id);
-    setEditId(e.target.id);
-    console.log('e.target.id:', e.target.id);
-    console.log('editId:', editId);
+    console.log("e.target.value:", e.target.value);
+
+    setEditId(e.target.value);
+
+    let el = document.getElementById(e.target.value)
+  // let el = document.getElementById(`${hats[0].id}`);
+  if (el.className === "hidden") {
+    el.className = "block";
+  } else {
+    el.className = "hidden";
+  };
+    // toggleClass();
+    // e.target.classList.add("hidden")
 
 
-    // let element = document.getElementsByClassName("edit-form");
+    // document.getElementsByClassName("edit-form")[0].toggle("hidden");
+    // console.log('element:', element);
     // element.classList.toggle("hidden");
 
-    // // const editForm = document.getElementById("edit-form");
+    // const editForm = document.getElementsByClassName("edit-form");
     // if (editForm.style.display === "none") {
     //   editForm.style.display = "block";
     // } else {
@@ -112,8 +137,6 @@ function UserPage() {
     // }
   }
 
-  // console.log('random hat id:', getRandomHatId(hats.length));
-  // console.log(hats[getRandomHatId()].description);
   return (
     <div className="container">
       <h1>Welcome, {user.username}!</h1>
@@ -126,7 +149,16 @@ function UserPage() {
             <p>HAT ID: {hat.id}</p>
             <p>Creator ID: {hat.creator_id}</p>
             <p>Description: {hat.description}</p>
-            <Button id={hat.id} variant="contained" className="btn" onClick={editBtn}>
+            <p>Color: {hat.hat_color}</p>
+            <p>Style: {hat.hat_style}</p>
+            <p>Fabric: {hat.hat_fabric}</p>
+            <p>Vibe: {hat.hat_vibe}</p>
+
+            <Button
+              value={hat.id}
+              variant="contained" 
+              className={`${hat.id}`} 
+              onClick={editBtn}>
               Edit
             </Button>
             <Button
@@ -139,15 +171,18 @@ function UserPage() {
                 DELETE
               </Button>
 
-            <Paper className="edit-form">
+          <div id={hat.id} className="hidden">
+            <Paper>
               <>
                 <h1>Edit Hat</h1>
-                <form onSubmit={(e) => editHat(e)}>
+                <form 
+                  // className="edit-form hidden"
+                  onSubmit={(e) => editHat(e)}>
                   <TextField
                     sx={{ m: 2 }}
                     label="enter new description"
                     onChange={editDescriptionChange}
-                    value={editDescription}
+                    value={hat.description || ''}
                     type="text"
                     placeholder="new description"
                     focused
@@ -157,7 +192,7 @@ function UserPage() {
                     sx={{ m: 2 }}
                     label="enter new photo url"
                     onChange={editUrlChange}
-                    value={editUrl}
+                    value={editUrl || ''}
                     type="text"
                     placeholder="new photo url"
                     focused
@@ -209,6 +244,7 @@ function UserPage() {
                 </form>
               </>
             </Paper>
+            </div>
           </Box>
         ))}
         {/* <Button
