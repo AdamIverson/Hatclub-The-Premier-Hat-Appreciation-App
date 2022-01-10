@@ -14,17 +14,19 @@ import {
   NativeSelect,
 } from "@mui/material";
 import "./HatsTime.css";
-// import FavBtn from "../FavBtn/FavBtn";
 
 export default function HatsTimePage() {
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
   const hats = useSelector((store) => store.setHats);
-  console.log(hats);
-  console.log("user.id:", user.id)
+  const favs = useSelector((store) => store.setFavs);
+  console.log("favs:", favs);
+  console.log("hats:", hats);
+  console.log("user.id:", user.id);
 
   useEffect(() => {
     dispatch({ type: "GET_HATS" });
+    // dispatch ({ type: "GET_FAVS" })
   }, []);
 
   const favHat = (id) => {
@@ -37,36 +39,26 @@ export default function HatsTimePage() {
     });
   };
 
-  function Test() {
+  function FavBtn(hat) {
+    console.log("FavBtn Click,:", hat);
+    console.log("hat:", hat);
     if (!user.id) {
-   return <p>ope</p>
-  } else {
-    return <Button>Fav</Button>
-  }
+      return <p>Register To Login To Fav</p>;
+    } else {
+      return (
+        <Button
+          sx={{ m: 1 }}
+          onClick={(e) => favHat(hat.id)}
+          id={hat.id}
+          className="photoButton"
+          variant="contained"
+        >
+          FavBtn
+        </Button>
+      );
+    }
   }
 
-  // function FavBtn() {
-  //   {user.id ? 
-  //       <button>FAV</button>
-  //   :
-  //     <p>NOT FAVE</p>
-  // }
-  // //   if (user.id) {
-  // //   return (
-  // //     <Button
-  // //       sx={{ m: 1 }}
-  // //       onClick={(e) => favHat(hat.id)}
-  // //       id={props.id}
-  // //       className="photoButton"
-  // //       variant="contained"
-  // //     >
-  // //       FAV
-  // //     </Button>
-  // //   );
-  // // } else {
-  // //   return <p>Winner</p>;
-  // // }
-  // }
   return (
     <Box>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
@@ -81,17 +73,18 @@ export default function HatsTimePage() {
               key={hat.id}
             />
             <ButtonGroup className="buttonGroup" size="small">
-            <Test />
+              <FavBtn hat={hat} />
 
-              {/* <Button
+              <Button
                 sx={{ m: 1 }}
                 onClick={(e) => favHat(hat.id)}
                 id={hat.id}
                 className="photoButton"
-                variant="contained">
+                variant="contained"
+              >
                 FAV
               </Button>
-              <Button
+              {/* <Button
                 sx={{ m: 1 }}
                 onClick={(e) => deleteHat(hat.id)}
                 className="photoButton"
