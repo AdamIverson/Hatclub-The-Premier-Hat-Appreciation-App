@@ -16,7 +16,9 @@ function UserPage() {
 
   const user = useSelector((store) => store.user);
   const hats = useSelector((store) => store.setUserHats);
+  const favs = useSelector((store) => store.setFaves);
 console.log('hats', hats);
+console.log('faves:', favs);
 
   useEffect(() => {
       dispatch({ type: "GET_USER_HATS" });
@@ -186,7 +188,7 @@ console.log('hats', hats);
                 <h1>Edit Hat</h1>
                 <form 
                   // className="edit-form hidden"
-                  onSubmit={(e) => editHat(e)}>
+                  onSubmit={(e) => editHat(hat)}>
                   <TextField
                     sx={{ m: 2 }}
                     label="enter new description"

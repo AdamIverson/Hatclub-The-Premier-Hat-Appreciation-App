@@ -1,11 +1,13 @@
+// EDIT your hat
+// this could definitely look different in the near future
+
 import { put, takeLatest } from "redux-saga/effects";
 import axios from "axios";
 
 function* editHat(action) {
-  console.log('editHat action:', action);
-  
+  console.log("editHat action:", action);
+
   console.log("action.payload:", action.payload);
-  
 
   try {
     const response = yield axios({

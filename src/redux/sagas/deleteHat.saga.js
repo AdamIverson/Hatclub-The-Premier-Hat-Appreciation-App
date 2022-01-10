@@ -1,3 +1,5 @@
+// this dang thing allows a logged in user to delete a hat that they uploaded
+
 import { put, takeLatest } from "redux-saga/effects";
 import axios from "axios";
 
@@ -14,11 +16,11 @@ function* deleteHat(action) {
       type: "GET_HATS",
     });
   } catch (error) {
-    window.alert('You are not authorized to delete this image.');
+    window.alert("You are not authorized to delete this image.");
     // console.log("error deleting from Client to Server", error);
   }
 }
 
 export default function* deleteHatSaga() {
-    yield takeLatest('DELETE_HAT', deleteHat)
+  yield takeLatest("DELETE_HAT", deleteHat);
 }
