@@ -4,6 +4,9 @@ import { useHistory } from "react-router-dom";
 import { Button, TextField } from "@mui/material";
 import "./AddHatPage.css";
 
+// this is a real ride, folks
+// AddHat form uses local state to collect the data from form inputs
+
 function AddHatPage() {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -43,6 +46,7 @@ function AddHatPage() {
     console.log("addNewHat click");
     e.preventDefault();
 
+  // the old spatchy-spatch
     dispatch({
       type: "ADD_HAT",
       payload: {
@@ -54,6 +58,7 @@ function AddHatPage() {
         hat_vibe: newVibe,
       },
     });
+  // redirect user to Hats Time page
     history.push("/hats_time");
   };
 

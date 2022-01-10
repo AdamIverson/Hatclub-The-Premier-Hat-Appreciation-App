@@ -5,6 +5,7 @@ const {
   rejectUnauthenticated,
 } = require("../modules/authentication-middleware");
 
+// GET all of the favorited photos for the logged-in user
 router.get("/:id", (req, res) => {
   console.log("get fav route req.user:", req.user);
   console.log("req.params.id:", req.params.id);
@@ -25,6 +26,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
+// POST route to ADD hats to the favorite table
 router.post("/", rejectUnauthenticated, (req, res) => {
   console.log("req.params.id:", req.params.id);
   console.log("req.user.id:", req.user.id);

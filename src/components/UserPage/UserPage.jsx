@@ -8,6 +8,12 @@ function UserPage() {
   const dispatch = useDispatch();
 
   // this component doesn't do much to start, just renders some user reducer info to the DOM
+  // but then all hell breaks loose when our guy adam decides to make this the Profile page
+  // now we are rendering all of the hats uploaded by the user
+  // we have an edit form so user can adjust details of their hats
+  // the goal is to populate the edit hat form with the existing info from db
+  // would love to clear inputs and hide form following submit
+
   const user = useSelector((store) => store.user);
   const hats = useSelector((store) => store.setUserHats);
 console.log('hats', hats);
@@ -109,6 +115,9 @@ console.log('hats', hats);
 //   }
 // }
 
+// the edit button registers the hat id of the photo AND
+// displays the edit form
+// edit btn hides form if clicked again
   const editBtn = (e) => {
     console.log("e.target.value:", e.target.value);
 

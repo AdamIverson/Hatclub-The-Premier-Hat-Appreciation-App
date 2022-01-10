@@ -14,7 +14,7 @@ function AboutPage() {
         <li>anyone wearing a hat can be in hatclub if they want</li>
         <li>anything can be a hat if it's on your head</li>
       </ul>
-      <Link to="/sources">Link to things I read in case I have nothing tangible to show for my efforts.</Link>
+      <Link to="/info">Link to things I read in case I have nothing tangible to show for my efforts.</Link>
     </div>
   );
 }

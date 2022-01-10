@@ -99,7 +99,7 @@ function App() {
           </ProtectedRoute>
 
           <ProtectedRoute
-            // logged in shows UserPage else shows LoginPage
+            // logged in shows Add A Hat page else shows LoginPage
             exact
             path="/add_hat"
           >

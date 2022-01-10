@@ -18,7 +18,9 @@ import "./HatsTime.css";
 export default function HatsTimePage() {
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
+  // Bring in the hats
   const hats = useSelector((store) => store.setHats);
+  // Bringing in the whole slate of favs on the Hats Time page might not be necessary
   const favs = useSelector((store) => store.setFavs);
   console.log("favs:", favs);
   console.log("hats:", hats);
@@ -29,6 +31,7 @@ export default function HatsTimePage() {
     // dispatch ({ type: "GET_FAVS" })
   }, []);
 
+  // add a hat to favs
   const favHat = (id) => {
     console.log("fav button click", id);
     dispatch({
@@ -39,6 +42,10 @@ export default function HatsTimePage() {
     });
   };
 
+
+  // This code is meant to teach me how okay it is to move code into a component
+  // But this code does not collect the id of the hat, so when it's clicked it only
+  //  submits the user.id - which is frustrating
   function FavBtn(hat) {
     console.log("FavBtn Click,:", hat);
     console.log("hat:", hat);
@@ -59,6 +66,12 @@ export default function HatsTimePage() {
     }
   }
 
+
+  //dropping a mui grid container
+  // mapping through all of the hats
+  // rendering said hats as grid items
+  // with an image and a Fav Button that only works for users who are logged in
+  // would love to remove the Fav Button for guest users, but can't until the component one works
   return (
     <Box>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
