@@ -16,7 +16,9 @@ function UserPage() {
 
   const user = useSelector((store) => store.user);
   const hats = useSelector((store) => store.setUserHats);
+  const favs = useSelector((store) => store.setFaves);
 console.log('hats', hats);
+console.log('faves:', favs);
 
   useEffect(() => {
       dispatch({ type: "GET_USER_HATS" });
