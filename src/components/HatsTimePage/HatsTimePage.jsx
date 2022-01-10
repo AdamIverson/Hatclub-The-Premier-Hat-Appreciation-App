@@ -47,7 +47,7 @@ export default function HatsTimePage() {
   // But this code does not collect the id of the hat, so when it's clicked it only
   //  submits the user.id - which is frustrating
   function FavBtn(hat) {
-    console.log("FavBtn Click,:", hat);
+    console.log("FavBtn Click:", hat.hat.id);
     console.log("hat:", hat);
     if (!user.id) {
       return <p>Register To Login To Fav</p>;
@@ -55,8 +55,8 @@ export default function HatsTimePage() {
       return (
         <Button
           sx={{ m: 1 }}
-          onClick={(e) => favHat(hat.id)}
-          id={hat.id}
+          onClick={(e) => favHat(hat.hat.id)}
+          id={hat.hat.id}
           className="photoButton"
           variant="contained"
         >
@@ -88,7 +88,7 @@ export default function HatsTimePage() {
             <ButtonGroup className="buttonGroup" size="small">
               <FavBtn hat={hat} />
 
-              <Button
+              {/* <Button
                 sx={{ m: 1 }}
                 onClick={(e) => favHat(hat.id)}
                 id={hat.id}
@@ -96,7 +96,7 @@ export default function HatsTimePage() {
                 variant="contained"
               >
                 FAV
-              </Button>
+              </Button> */}
               {/* <Button
                 sx={{ m: 1 }}
                 onClick={(e) => deleteHat(hat.id)}
