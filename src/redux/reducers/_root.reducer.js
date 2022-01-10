@@ -1,10 +1,10 @@
-import { combineReducers } from 'redux';
-import errors from './errors.reducer';
-import user from './user.reducer';
-import setHats from './hat.reducer';
-import setFavs from './fav.reducer';
-import setUserHats from './userHat.reducer';
-import editHat from './editHat.reducer';
+import { combineReducers } from "redux";
+import errors from "./errors.reducer";
+import user from "./user.reducer";
+import setHats from "./hat.reducer";
+import setFavs from "./fav.reducer";
+import setUserHats from "./userHat.reducer";
+import editHat from "./editHat.reducer";
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
