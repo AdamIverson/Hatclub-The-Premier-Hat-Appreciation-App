@@ -2,7 +2,7 @@ import { put, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
 
 function* addFav(action){  
-  console.log('action.payload:', action.payload.id)
+  console.log('action.payload:', action.payload)
   
   try {
     const response = yield axios({

@@ -17,11 +17,16 @@ import "./HatsTime.css";
 
 export default function HatsTimePage() {
   const dispatch = useDispatch();
+  const user = useSelector((store) => store.user);
   const hats = useSelector((store) => store.setHats);
-  console.log(hats);
+  const favs = useSelector((store) => store.setFavs);
+  console.log("favs:", favs);
+  console.log("hats:", hats);
+  console.log("user.id:", user.id);
 
   useEffect(() => {
     dispatch({ type: "GET_HATS" });
+    // dispatch ({ type: "GET_FAVS" })
   }, []);
 
   const favHat = (id) => {
@@ -29,10 +34,30 @@ export default function HatsTimePage() {
     dispatch({
       type: "ADD_FAV",
       payload: {
-        id: id
-      }
+        id: id,
+      },
     });
   };
+
+  function FavBtn(hat) {
+    console.log("FavBtn Click,:", hat);
+    console.log("hat:", hat);
+    if (!user.id) {
+      return <p>Register To Login To Fav</p>;
+    } else {
+      return (
+        <Button
+          sx={{ m: 1 }}
+          onClick={(e) => favHat(hat.id)}
+          id={hat.id}
+          className="photoButton"
+          variant="contained"
+        >
+          FavBtn
+        </Button>
+      );
+    }
+  }
 
   return (
     <Box>
@@ -47,22 +72,19 @@ export default function HatsTimePage() {
               loading="lazy"
               key={hat.id}
             />
-            <ul>
-              <li>Creator ID: {hat.creator_id}</li>
-              <li>Description: {hat.description}</li>
-              <li>Vibe: {hat.hat_vibe}</li>
-            </ul>
-            {/* <br /> */}
             <ButtonGroup className="buttonGroup" size="small">
+              <FavBtn hat={hat} />
+
               <Button
                 sx={{ m: 1 }}
                 onClick={(e) => favHat(hat.id)}
                 id={hat.id}
                 className="photoButton"
-                variant="contained">
+                variant="contained"
+              >
                 FAV
               </Button>
-              <Button
+              {/* <Button
                 sx={{ m: 1 }}
                 onClick={(e) => deleteHat(hat.id)}
                 className="photoButton"
@@ -70,8 +92,13 @@ export default function HatsTimePage() {
                 color="warning"
               >
                 DELETE
-              </Button>
+              </Button> */}
             </ButtonGroup>
+            <ul>
+              <li>Creator ID: {hat.creator_id}</li>
+              <li>Description: {hat.description}</li>
+              <li>Vibe: {hat.hat_vibe}</li>
+            </ul>
             {/* </Item> */}
           </Grid>
         ))}

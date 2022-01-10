@@ -3,7 +3,8 @@ import errors from './errors.reducer';
 import user from './user.reducer';
 import setHats from './hat.reducer';
 import setFavs from './fav.reducer';
-import setUserHats from './userHat.reducer'
+import setUserHats from './userHat.reducer';
+import editHat from './editHat.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -16,7 +17,8 @@ const rootReducer = combineReducers({
   user, // will have an id and username if someone is logged in
   setHats,
   setFavs,
-  setUserHats
+  setUserHats,
+  editHat,
 });
 
 export default rootReducer;
