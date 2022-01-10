@@ -21,6 +21,8 @@ export default function HatsTimePage() {
   // Bring in the hats
   const hats = useSelector((store) => store.setHats);
   // Bringing in the whole slate of favs on the Hats Time page might not be necessary
+  // but won't it be easier to check if a hat already exists in the db?
+  // this probably isn't the best way, but I'll be closer to understanding the best way after doing this
   const favs = useSelector((store) => store.setFavs);
   console.log("favs:", favs);
   console.log("hats:", hats);
@@ -32,42 +34,55 @@ export default function HatsTimePage() {
   }, []);
 
   // add a hat to favs
-  const favHat = (id) => {
-    console.log("fav button click", id);
-    dispatch({
-      type: "ADD_FAV",
-      payload: {
-        id: id,
-      },
-    });
-  };
+  // const favHat = (id) => {
+  //   console.log("fav button click", id);
+  //   dispatch({
+  //     type: "ADD_FAV",
+  //     payload: {
+  //       id: id,
+  //     },
+  //   });
+  // };
 
+  // // This code is meant to teach me how okay it is to move code into a component
+  // // But this code does not collect the id of the hat, so when it's clicked it only
+  // //  submits the user.id - which is frustrating
+  // function FavBtn(hat) {
+  //     console.log("FavBtn Click:", hat.hat.id);
+  //     console.log("hat:", hat);
+  //   if (!user.id) {
+  //     return <p>Register To Login To Fav</p>;
+  //   } else {
+  //     return <p>Getting there</p>;
+  //     console.log("user.id", user.id);
+  //     {favs.map((fav) => {
+  //       console.log("fav.user_id:", fav.user_id);
+  //       if (user.id === fav.user_id && hat.hat.id === fav.hat_id) {
+  //         return (
+  //           <p>you're doing great</p>
+  //           <Button
+  //             variant="contained"
+  //             color="warning">
+  //               UNFAV
+  //               </Button>
+  //                   )};
+  //       } else {
+  //     return (
+  //       <p>not bad</p>
+  //       <Button
+  //         sx={{ m: 1 }}
+  //         onClick={(e) => favHat(hat.hat.id)}
+  //         id={hat.hat.id}
+  //         className="photoButton"
+  //         variant="contained"
+  //       >
+  //         FavBtn
+  //       </Button>
+  //     );
+  //   }
+  // }
 
-  // This code is meant to teach me how okay it is to move code into a component
-  // But this code does not collect the id of the hat, so when it's clicked it only
-  //  submits the user.id - which is frustrating
-  function FavBtn(hat) {
-    console.log("FavBtn Click:", hat.hat.id);
-    console.log("hat:", hat);
-    if (!user.id) {
-      return <p>Register To Login To Fav</p>;
-    } else {
-      return (
-        <Button
-          sx={{ m: 1 }}
-          onClick={(e) => favHat(hat.hat.id)}
-          id={hat.hat.id}
-          className="photoButton"
-          variant="contained"
-        >
-          FavBtn
-        </Button>
-      );
-    }
-  }
-
-
-  //dropping a mui grid container
+  // dropping a mui grid container
   // mapping through all of the hats
   // rendering said hats as grid items
   // with an image and a Fav Button that only works for users who are logged in
@@ -86,7 +101,7 @@ export default function HatsTimePage() {
               key={hat.id}
             />
             <ButtonGroup className="buttonGroup" size="small">
-              <FavBtn hat={hat} />
+              {/* <FavBtn hat={hat} /> */}
 
               {/* <Button
                 sx={{ m: 1 }}
