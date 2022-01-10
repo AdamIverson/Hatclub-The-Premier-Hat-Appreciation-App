@@ -186,7 +186,7 @@ console.log('hats', hats);
                 <h1>Edit Hat</h1>
                 <form 
                   // className="edit-form hidden"
-                  onSubmit={(e) => editHat(e)}>
+                  onSubmit={(e) => editHat(hat)}>
                   <TextField
                     sx={{ m: 2 }}
                     label="enter new description"
