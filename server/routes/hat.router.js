@@ -38,8 +38,7 @@ router.delete('/:id', (req, res) => {
   // //req.user.id as value of "user_id"
   console.log(req.user.id);
 
-  //check and see if the "user_id" value of the row "id" matches req.user.id
-  //query SELECT * FROM "item" WHERE "id" = req.params
+  //query SELECT * FROM "hat" WHERE "id" = req.params.id
   pool.query(`SELECT * FROM "hat" WHERE "id"=$1`, [req.params.id])
     .then((result) => {
       console.log(result.rows);

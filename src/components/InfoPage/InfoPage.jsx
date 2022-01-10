@@ -8,7 +8,8 @@ import React from 'react';
 function InfoPage() {
   return (
     <div className="container">
-      <p>Info Page</p>
+      <p>Documentation Page</p>
+      <p>Bibliography go here</p>
     </div>
   );
 }
