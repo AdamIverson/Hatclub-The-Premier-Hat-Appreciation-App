@@ -47,28 +47,28 @@ export default function HatsTimePage() {
   // // This code is meant to teach me how okay it is to move code into a component
   // // But this code does not collect the id of the hat, so when it's clicked it only
   // //  submits the user.id - which is frustrating
-  // function FavBtn(hat) {
-  //     console.log("FavBtn Click:", hat.hat.id);
-  //     console.log("hat:", hat);
-  //   if (!user.id) {
-  //     return <p>Register To Login To Fav</p>;
-  //   } else {
-  //     return <p>Getting there</p>;
+  function FavBtn(hat) {
+      console.log("FavBtn Click:", hat.hat.id);
+      console.log("hat:", hat);
+    if (!user.id) {
+      return <p>Register To Login To Fav</p>;
+    } else {
+      return <p>Getting there</p>;
   //     console.log("user.id", user.id);
   //     {favs.map((fav) => {
   //       console.log("fav.user_id:", fav.user_id);
   //       if (user.id === fav.user_id && hat.hat.id === fav.hat_id) {
   //         return (
   //           <p>you're doing great</p>
-  //           <Button
-  //             variant="contained"
-  //             color="warning">
-  //               UNFAV
-  //               </Button>
-  //                   )};
+  //           // <Button
+  //           //   variant="contained"
+  //           //   color="warning">
+  //           //     UNFAV
+  //           //     </Button>
+  //                   );
   //       } else {
   //     return (
-  //       <p>not bad</p>
+  //       // <p>not bad</p>
   //       <Button
   //         sx={{ m: 1 }}
   //         onClick={(e) => favHat(hat.hat.id)}
@@ -79,8 +79,8 @@ export default function HatsTimePage() {
   //         FavBtn
   //       </Button>
   //     );
-  //   }
-  // }
+    }
+  }
 
   // dropping a mui grid container
   // mapping through all of the hats
@@ -101,7 +101,7 @@ export default function HatsTimePage() {
               key={hat.id}
             />
             <ButtonGroup className="buttonGroup" size="small">
-              {/* <FavBtn hat={hat} /> */}
+              <FavBtn hat={hat} />
 
               {/* <Button
                 sx={{ m: 1 }}

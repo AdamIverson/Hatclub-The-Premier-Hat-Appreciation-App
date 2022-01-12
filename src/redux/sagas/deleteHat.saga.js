@@ -4,7 +4,7 @@ import { put, takeLatest } from "redux-saga/effects";
 import axios from "axios";
 
 function* deleteHat(action) {
-  console.log("deleteHat action", action);
+  console.log("deleteHat action.payload", action.payload);
   try {
     const response = yield axios({
       method: "DELETE",

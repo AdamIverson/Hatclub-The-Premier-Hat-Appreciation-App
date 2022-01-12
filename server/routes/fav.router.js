@@ -7,8 +7,7 @@ const {
 
 // GET all of the favorited photos for the logged-in user
 router.get("/:id", (req, res) => {
-  console.log("get fav route req.user:", req.user);
-  console.log("req.params.id:", req.params.id);
+  console.log("fav.router GET req.user.id:", req.user.id);
   
   const idToGet = req.user.id;
   const sqlText = `
