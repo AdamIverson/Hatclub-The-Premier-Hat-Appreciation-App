@@ -5,7 +5,7 @@ import { put, takeLatest } from "redux-saga/effects";
 import axios from "axios";
 
 function* getFavs(action) {
-  console.log("getFavs action.payload:", action.payload);
+  console.log("getFavs action:", action);
 
   try {
     const response = yield axios({

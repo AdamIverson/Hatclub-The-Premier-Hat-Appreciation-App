@@ -26,10 +26,9 @@ router.get("/:id", (req, res) => {
 });
 
 // POST route to ADD hats to the favorite table
-router.post("/", rejectUnauthenticated, (req, res) => {
-  console.log("req.params.id:", req.params.id);
+router.post("/", (req, res) => {
+  console.log("fav.router POST req.params.id:", req.params.id);
   console.log("req.user.id:", req.user.id);
-  console.log("req.body:", req.body);
 
   const postQuery = `
   INSERT INTO "favorite" ("user_id", "hat_id")

@@ -5,7 +5,6 @@ import setHats from "./hat.reducer";
 import setFavs from "./fav.reducer";
 import setUserHats from "./userHat.reducer";
 import editHat from "./editHat.reducer";
-import editOneHat from "./editOneHat.reducer";
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -20,7 +19,6 @@ const rootReducer = combineReducers({
   setFavs,
   setUserHats,
   editHat,
-  // editOneHat,
 });
 
 export default rootReducer;
