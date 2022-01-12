@@ -12,6 +12,7 @@ const userRouter = require('./routes/user.router');
 const hatRouter = require('./routes/hat.router');
 const favRouter = require('./routes/fav.router');
 const userHatRouter = require('./routes/userHat.router');
+const fetchOneHatRouter = require('./routes/fetchOneHat.router')
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -29,6 +30,7 @@ app.use('/api/user', userRouter);
 app.use('/api/hat', hatRouter);
 app.use('/api/fav', favRouter);
 app.use('/api/userHat', userHatRouter);
+app.use('/api/fetchOneHat', fetchOneHatRouter);
 
 // Serve static files
 app.use(express.static('build'));

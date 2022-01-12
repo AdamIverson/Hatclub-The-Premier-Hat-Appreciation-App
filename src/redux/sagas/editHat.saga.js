@@ -5,9 +5,10 @@ import { put, takeLatest } from "redux-saga/effects";
 import axios from "axios";
 
 function* editHat(action) {
-  console.log("editHat action:", action);
+  console.log('SUBMIT EDIT CLICK')
+  console.log("editHat.saga action:", action);
 
-  console.log("action.payload:", action.payload);
+  console.log("editHat.saga action.payload:", action.payload);
 
   try {
     const response = yield axios({
@@ -23,7 +24,7 @@ function* editHat(action) {
       },
     });
     yield put({
-      type: "GET_HATS",
+      type: "GET_USER_HATS",
     });
   } catch (error) {
     window.alert("bummer");
