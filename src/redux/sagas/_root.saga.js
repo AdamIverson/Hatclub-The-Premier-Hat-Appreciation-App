@@ -10,6 +10,7 @@ import getFavSaga from './getFav.saga';
 import addFavSaga from './addFav.saga';
 import getUserHatSaga from './getUserHats.saga';
 import getOneHatSaga from './fetchOneHat.saga';
+import deleteFavSaga from './deleteFav.saga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -31,5 +32,6 @@ export default function* rootSaga() {
     addFavSaga(),
     getUserHatSaga(),
     getOneHatSaga(),
+    deleteFavSaga(),
   ]);
 }

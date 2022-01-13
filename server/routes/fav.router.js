@@ -44,4 +44,23 @@ router.post("/", (req, res) => {
     });
 });
 
+router.delete("/:id", (req, res) => {
+  //req.params as "id" value of the item
+  console.log('req.params', req.params.id);
+  // //req.user.id as value of "user_id"
+  // console.log("router.delete req.body.id:", req.body.id);
+
+  //query SELECT * FROM "hat" WHERE "id" = req.params.id
+  
+        const query2 = `DELETE FROM "favorite" WHERE "hat_id"=$1;`;
+        const hatToUnfav = [req.params.id];
+        pool
+          .query(query2, hatToUnfav)
+          .then(() => res.sendStatus(202))
+          .catch((error) => {
+            console.log("DELETE server error:", error);
+          });
+      
+});
+
 module.exports = router;
