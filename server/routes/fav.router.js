@@ -52,10 +52,10 @@ router.delete("/:id", (req, res) => {
 
   //query SELECT * FROM "hat" WHERE "id" = req.params.id
   
-        const query2 = `DELETE FROM "favorite" WHERE "hat_id"=$1;`;
-        const hatToUnfav = [req.params.id];
+        const query = `DELETE FROM "favorite" WHERE "hat_id"=$1 AND "user_id"=$2;`;
+        const values = [req.params.id, req.user.id];
         pool
-          .query(query2, hatToUnfav)
+          .query(query, values)
           .then(() => res.sendStatus(202))
           .catch((error) => {
             console.log("DELETE server error:", error);
