@@ -35,23 +35,23 @@ export default function HatsTimePage() {
 
   // add a hat to favs
   const favHat = (hat) => {
-    console.log('favHat hat.id:', hat.id);
-        return dispatch({
-          type: "ADD_FAV",
-          payload: {
-            hat_id: hat.id,
-          },
-        });
-      };
+    console.log("favHat hat.id:", hat.id);
+    return dispatch({
+      type: "ADD_FAV",
+      payload: {
+        hat_id: hat.id,
+      },
+    });
+  };
 
   const unFavHat = (hat) => {
-    console.log("on our way, unfav btn", hat.id);
-    // dispatch({
-    //   type: "DELETE_FAV",
-    //   payload: {
-    //     id: hat.hat.id,
-    //   }
-    // })
+    console.log("on our way, unfav btn hat.id:", hat.id);
+    return dispatch({
+      type: "DELETE_FAV",
+      payload: {
+        hat_id: hat.id,
+      },
+    });
   };
 
   // // This code is meant to teach me how okay it is to move code into a component
@@ -61,7 +61,7 @@ export default function HatsTimePage() {
     console.log("FavBtn Click:", hat.id);
     console.log("hat:", hat);
     if (!user.id) {
-      return (<p>Register To Login To Fav</p>);
+      return <p>Register To Login To Fav</p>;
     } else {
       for (let fav of favs) {
         if (fav.hat_id === hat.id) {
@@ -91,34 +91,35 @@ export default function HatsTimePage() {
     }
   }
 
-    // dropping a mui grid container
-    // mapping through all of the hats
-    // rendering said hats as grid items
-    // with an image and a Fav Button that only works for users who are logged in
-    // would love to remove the Fav Button for guest users, but can't until the component one works
-    return (
-      <Box>
-        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-          {hats.map((hat) => (
-            <Grid key={hat.id} item xs={6}>
-              <img
-                src={`${hat.photo_url}?w=164&h=164&fit=crop&auto=format`}
-                srcSet={`${hat.photo_url}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-                alt={hat.description}
-                loading="lazy"
-                key={hat.id}
-              />
-              <ButtonGroup className="buttonGroup" size="small">
-                <FavBtn hat={hat} />
-              </ButtonGroup>
-              <ul>
-                <li>Creator ID: {hat.creator_id}</li>
-                <li>Description: {hat.description}</li>
-                <li>Vibe: {hat.hat_vibe}</li>
-              </ul>
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
-    );
-  }
+  // dropping a mui grid container
+  // mapping through all of the hats
+  // rendering said hats as grid items
+  // with an image and a Fav Button that only works for users who are logged in
+  // would love to remove the Fav Button for guest users, but can't until the component one works
+  return (
+    <Box>
+      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+        {hats.map((hat) => (
+          <Grid key={hat.id} item xs={6}>
+            <img
+              src={`${hat.photo_url}?w=164&h=164&fit=crop&auto=format`}
+              srcSet={`${hat.photo_url}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+              alt={hat.description}
+              loading="lazy"
+              key={hat.id}
+            />
+            <ButtonGroup className="buttonGroup" size="small">
+              <FavBtn hat={hat} />
+            </ButtonGroup>
+            <ul>
+              <li>Hat ID: {hat.id}</li>
+              <li>Creator ID: {hat.creator_id}</li>
+              <li>Description: {hat.description}</li>
+              <li>Vibe: {hat.hat_vibe}</li>
+            </ul>
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
+  );
+}

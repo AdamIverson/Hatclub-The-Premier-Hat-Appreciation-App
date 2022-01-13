@@ -12,9 +12,9 @@ function* addFav(action) {
       url: `/api/fav/`,
       data: action.payload,
     });
-   yield put({ 
-      type: "GET_FAVS" 
-    })
+    yield put({
+      type: "GET_FAVS",
+    });
   } catch (error) {
     console.log("error in POST: Client to Server", error);
   }
