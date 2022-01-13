@@ -27,14 +27,13 @@ router.get("/:id", (req, res) => {
 
 // POST route to ADD hats to the favorite table
 router.post("/", (req, res) => {
-  console.log("fav.router POST req.params.id:", req.params.id);
   console.log("req.user.id:", req.user.id);
 
   const postQuery = `
   INSERT INTO "favorite" ("user_id", "hat_id")
   VALUES ($1, $2)
   `;
-  const postValues = [req.user.id, req.body.id];
+  const postValues = [req.user.id, req.body.hat_id];
 
   pool
     .query(postQuery, postValues)
