@@ -1,0 +1,31 @@
+form {
+  display: inline;
+}
+
+img {
+  max-width: 100%;;
+}
+
+.photos {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+.photoButton {
+  display: block;
+}
+
+.btngrp {
+  /* display: inline; */
+  margin: 1rem;
+  padding: 2rem;
+}
+
+.list {
+  list-style-type: none;
+  background-color: #7B1FA2;
+  color: #F5F37D;
+  padding: 5rem;
+  border-radius: 25px;
+}

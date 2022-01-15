@@ -17,7 +17,7 @@ export default function ViewModeButtons() {
   return (
     <div>
       <ButtonGroup size="small" sx={{ m: 2 }}>
-        <Button
+        {/* <Button
           className="btn"
           sx={{ m: 2 }}
           color="secondary"
@@ -25,7 +25,7 @@ export default function ViewModeButtons() {
           onClick={lexendFont}
         >
           Lexend Font
-        </Button>
+        </Button> */}
         <Button
           sx={{ m: 2 }}
           className="btn"

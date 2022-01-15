@@ -68,27 +68,30 @@ export default function HatsTimePage() {
         if (fav.hat_id === hat.id) {
           return (
             <Button
-              sx={{ color: 'yellow', boxShadow: 10 }}
+              size="small"
+              sx={{ color: "yellow", boxShadow: 10 }}
               id={hat.id}
               onClick={(e) => unFavHat(hat)}
               variant="contained"
-              color="secondary"
               className="photoButton"
+              color="error"
             >
-              UNFAV
+              UNFAVORITE
             </Button>
           );
         }
       }
       return (
         <Button
-          sx={{ color: 'pink', boxShadow: 10 }}
+          size="small"
+          sx={{ color: "yellow", boxShadow: 10 }}
           onClick={(e) => favHat(hat)}
           id={hat.id}
           className="photoButton"
           variant="contained"
+          color="secondary"
         >
-          FavBtn
+          add to favorites
         </Button>
       );
     }
@@ -100,31 +103,37 @@ export default function HatsTimePage() {
   // with an image and a Fav Button that only works for users who are logged in
   // would love to remove the Fav Button for guest users, but can't until the component one works
   return (
-    <Box>
+    <Box
+      className="main">
       <h1>hats time!</h1>
-      <Grid 
+      <Grid
+        rowSpacing={1}
+        columnSpacing={{xs: 1, sm: 2 }}
+        alignItems="center"
+        direction="row"
+        className="grid"
+        sx={{ width: 100 }}
         container 
-        columnSpacing={{ xs: 1, sm: 2, md: 3 }}
         >
         {hats.map((hat) => (
           <Grid 
+            xs={3}
+            className="photo"
             key={hat.id} 
             item 
-            sx={{ boxShadow: 10, backgroundColor: "red", m: 1 }}>
+            sx={{ boxShadow: 20, m: 1 }}>
             <img
               src={`${hat.photo_url}?w=164&h=164&fit=crop&auto=format`}
               srcSet={`${hat.photo_url}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
               alt={hat.description}
               loading="lazy"
               key={hat.id}
-              // sx={{ boxShadow: 10 }}
             />
-            <ButtonGroup className="buttonGroup" size="small">
+            <br/>
               <FavBtn hat={hat} />
-            </ButtonGroup>
             <ul>
               <li>Hat ID: {hat.id}</li>
-              <li>Creator: {user.username}</li>
+              <li>Creator: FIX THIS PAL</li>
               <li>Description: {hat.description}</li>
               <li>Vibe: {hat.hat_vibe}</li>
             </ul>

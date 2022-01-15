@@ -5,11 +5,17 @@ body,
 }
 
 body {
-  font-family:'Times New Roman', Times, serif;
-  /* margin: 0px; */
+  font-family:'Lexend', serif;
+  margin: 5rem;
   background-color: #f6f47cbe;
 }
 
+h1 {
+  text-align: center;
+  font-size: 5rem;
+  color: #9698f3;
+  text-shadow: ivory;
+}
 img {
   max-width: 100%;
   padding: .25em;
