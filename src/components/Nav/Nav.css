@@ -3,10 +3,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  margin: 0 0 30px;
+  /* width: 100%; */
+  /* margin: 0 0 30px; */
   background: #7c7ff6;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .nav a {

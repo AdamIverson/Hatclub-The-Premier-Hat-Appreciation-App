@@ -5,14 +5,15 @@ body,
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0px;
+  font-family:'Times New Roman', Times, serif;
+  /* margin: 0px; */
   background-color: #f6f47cbe;
 }
 
 img {
-  display: inline-block;
   max-width: 100%;
+  padding: .25em;
+  display: inline-block;
 }
 
 /* --------------------------------------------------------------------------------
@@ -21,7 +22,6 @@ Container
 
 .container {
   padding: 20px;
-  width: 100%;
 }
 
 /* --------------------------------------------------------------------------------
@@ -82,7 +82,8 @@ Button
 }
 
 .dark-mode {
-  background-color: black;
+  background-color: #4d4ea0;
+  color: #f5f37d;
 }
 
 .hidden {

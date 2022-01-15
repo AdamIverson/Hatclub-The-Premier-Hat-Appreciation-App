@@ -112,11 +112,7 @@ function UserPage() {
         id: hatToEdit.id,
       },
     });
-    // let el = document.getElementById(e.target.value);
-    // el.className = "hidden";
     dispatch({ type: "GET_USER_HATS" });
-
-    // clearInputs();
   }
 
   const deleteHat = (id) => {
@@ -126,7 +122,6 @@ function UserPage() {
       payload: id,
     });
     dispatch({ type: "GET_USER_HATS" });
-    // editBtn();
   };
 
   // const toggleClass = (e) => {

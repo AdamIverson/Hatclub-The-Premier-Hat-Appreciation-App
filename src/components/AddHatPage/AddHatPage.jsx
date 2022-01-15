@@ -2,7 +2,6 @@ import react, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { Button, TextField } from "@mui/material";
-import "./AddHatPage.css";
 
 // this is a real ride, folks
 // AddHat form uses local state to collect the data from form inputs

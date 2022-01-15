@@ -20,16 +20,13 @@ function LandingPage() {
       <div className="grid">
         <div className="grid-col grid-col_8">
           <p>
-            Welcome to the forgotten page.
+            Welcome to the landing page. It's great to have you here.
           </p>
 
           <p>
             if u don't like hats ur gonna hate this
           </p>
 
-          <p>
-            Not sure what to do here.
-          </p>
         </div>
         <div className="grid-col grid-col_4">
           <RegisterForm />

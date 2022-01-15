@@ -13,6 +13,7 @@ import {
   TextField,
   NativeSelect,
 } from "@mui/material";
+import { boxShadow } from '@mui/system'
 import "./HatsTime.css";
 
 export default function HatsTimePage() {
@@ -61,16 +62,18 @@ export default function HatsTimePage() {
     console.log("FavBtn Click:", hat.id);
     console.log("hat:", hat);
     if (!user.id) {
-      return <p>Register To Login To Fav</p>;
+      return <a href="/register">Register To Login To Fav</a>;
     } else {
       for (let fav of favs) {
         if (fav.hat_id === hat.id) {
           return (
             <Button
+              sx={{ color: 'yellow', boxShadow: 10 }}
               id={hat.id}
               onClick={(e) => unFavHat(hat)}
               variant="contained"
-              color="warning"
+              color="secondary"
+              className="photoButton"
             >
               UNFAV
             </Button>
@@ -79,7 +82,7 @@ export default function HatsTimePage() {
       }
       return (
         <Button
-          sx={{ m: 1 }}
+          sx={{ color: 'pink', boxShadow: 10 }}
           onClick={(e) => favHat(hat)}
           id={hat.id}
           className="photoButton"
@@ -98,22 +101,30 @@ export default function HatsTimePage() {
   // would love to remove the Fav Button for guest users, but can't until the component one works
   return (
     <Box>
-      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+      <h1>hats time!</h1>
+      <Grid 
+        container 
+        columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+        >
         {hats.map((hat) => (
-          <Grid key={hat.id} item xs={6}>
+          <Grid 
+            key={hat.id} 
+            item 
+            sx={{ boxShadow: 10, backgroundColor: "red", m: 1 }}>
             <img
               src={`${hat.photo_url}?w=164&h=164&fit=crop&auto=format`}
               srcSet={`${hat.photo_url}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
               alt={hat.description}
               loading="lazy"
               key={hat.id}
+              // sx={{ boxShadow: 10 }}
             />
             <ButtonGroup className="buttonGroup" size="small">
               <FavBtn hat={hat} />
             </ButtonGroup>
             <ul>
               <li>Hat ID: {hat.id}</li>
-              <li>Creator ID: {hat.creator_id}</li>
+              <li>Creator: {user.username}</li>
               <li>Description: {hat.description}</li>
               <li>Vibe: {hat.hat_vibe}</li>
             </ul>
