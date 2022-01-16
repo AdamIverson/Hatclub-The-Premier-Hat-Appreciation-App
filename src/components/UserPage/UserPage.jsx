@@ -91,7 +91,7 @@ function UserPage() {
   };
 
   const editHat = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     // console.log("click editHat e.target.value:", e.target.value);
     dispatch({
       type: "EDIT_HAT",
