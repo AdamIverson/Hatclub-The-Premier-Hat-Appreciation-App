@@ -20,7 +20,7 @@ function Nav() {
       </Link>
       <br />
 
-      <ViewModeButtons />
+      {/* <ViewModeButtons /> */}
       
       <div className="buttons">
         <Link className="navLink" to="/hats_time">
