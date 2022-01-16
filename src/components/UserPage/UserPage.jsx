@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import LogOutButton from "../LogOutButton/LogOutButton";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom/";
 import {
   Box,
   Button,
@@ -13,7 +14,7 @@ import "./UserPage.css";
 
 function UserPage() {
   const dispatch = useDispatch();
-
+  const history = useHistory();
   // this component doesn't do much to start, just renders some user reducer info to the DOM
   // but then all hell breaks loose when our guy adam decides to make this the Profile page
   // now we are rendering all of the hats uploaded by the user
@@ -91,7 +92,7 @@ function UserPage() {
   };
 
   const editHat = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     // console.log("click editHat e.target.value:", e.target.value);
     dispatch({
       type: "EDIT_HAT",
@@ -106,6 +107,7 @@ function UserPage() {
       },
     });
     dispatch({ type: "GET_USER_HATS" });
+    history.push('/');
   };
 
   const deleteHat = (id) => {
@@ -137,15 +139,18 @@ function UserPage() {
   };
 
   return (
-    <div alignItems="center" className="container">
+    <div className="container">
       <h1>Welcome, {user.username}!</h1>
       {/* <p>Your ID is: {user.id}</p> */}
       <h2>Your Hats</h2>
-      <Grid container alignItems="center">
+      <Grid container spacing={30}>
         {hats.map((hat) => (
           <Grid 
-            className="photos" 
+            display={"flex"}
+            justifyContent={"flex-start"}
+            lg={12}
             key={hat.id} 
+            container
             item>
             <img src={hat.photo_url}></img>
             <ul className="list">
@@ -159,7 +164,6 @@ function UserPage() {
               <li><Button
                 value={hat.id}
                 variant="contained"
-                className={`${hat.id} photoButton`}
                 onClick={editBtn}
               >
                 Edit
@@ -274,7 +278,7 @@ function UserPage() {
           </Grid>
         ))}
       </Grid>
-      <LogOutButton className="btn" />
+      {/* <LogOutButton className="btn" /> */}
     </div>
   );
 }

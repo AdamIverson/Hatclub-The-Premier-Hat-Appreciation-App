@@ -87,7 +87,7 @@ export default function HatsTimePage() {
           sx={{ color: "yellow", boxShadow: 10 }}
           onClick={(e) => favHat(hat)}
           id={hat.id}
-          className="photoButton"
+          m={3}
           variant="contained"
           color="secondary"
         >
@@ -107,25 +107,29 @@ export default function HatsTimePage() {
       className="main">
       <h1>hats time!</h1>
       <Grid
-        rowSpacing={1}
-        columnSpacing={{xs: 1, sm: 2 }}
-        alignItems="center"
-        direction="row"
+        m={3}
         className="grid"
-        sx={{ width: 100 }}
+        backgroundColor="#551A8B"
+        rowSpacing={1}
+        borderRadius={25}
+        columnSpacing={{xs: 1, sm: 2 }}
+        justifyContent="center"
+        alignItems="center"
         container 
         >
         {hats.map((hat) => (
           <Grid 
             xs={3}
-            className="photo"
+            m={4}
+            borderRadius={5}
+            className="card"
+            backgroundColor="#7C7FF5"
+            justifyContent="center"
             key={hat.id} 
-            item 
-            sx={{ boxShadow: 20, m: 1 }}
-            style={{ height:'100%' }}>
+            color="#f5f37d"
+            item>
             <img
               src={`${hat.photo_url}?w=164&h=164&fit=crop&auto=format`}
-              srcSet={`${hat.photo_url}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
               alt={hat.description}
               loading="lazy"
               key={hat.id}

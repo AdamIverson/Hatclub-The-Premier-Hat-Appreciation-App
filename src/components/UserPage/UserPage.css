@@ -3,8 +3,12 @@ form {
 }
 
 img {
+  border-radius: 25px;
+  border: 10px double #f5f37d;
+  box-shadow: 10px 10px white;
   max-width: 100%;
-  border: 10px double #F5F37D;
+  padding: 0.25em;
+  display: inline-block;
 }
 
 h3 {
@@ -12,34 +16,19 @@ h3 {
   text-align: center;
 }
 
-.photos {
-  display: flex;
-  align-items: center;
-  justify-items: center;
-}
-
-.photoButton {
-  display: block;
-}
-
-.btngrp {
-  /* display: inline; */
-  margin: 1rem;
-  padding: 2rem;
-}
-
 .list {
   list-style-type: none;
   background-color: #7c7ff6;
-  color: #F5F37D;
+  color: #f5f37d;
   padding: 5rem;
   border-radius: 25px;
   margin: 1rem;
-  border: 10px double #F5F37D;
+  border: 10px double #f5f37d;
+  box-shadow: 10px 10px white;
 }
-
 
 .paper {
   border: 10px double #797bf0;
   align-items: center;
+  box-shadow: 10px 10px white;
 }

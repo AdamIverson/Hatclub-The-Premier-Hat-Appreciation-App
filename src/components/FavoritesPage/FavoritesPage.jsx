@@ -25,28 +25,50 @@ function FavoritesPage() {
   return (
     <>
       <h1>FAVORHATS</h1>
-      <Grid m={3} container spacing={3} direction="row">
+      <Grid m={3} container spacing={3} direction="row" justifyContent={"flex"}>
         {favs.map((fav) => (
           <Grid
             className="outer"
             item
             key={fav.hat_id}
-            m={5}
-            padding={5}
+            m={3}
+            sm={12}
+            padding={2}
             display="flex"
-            // sx={{ background: purple[300] }}
+            color="#f5f37d"
           >
             {/* <Paper 
               sx={{ background: purple[300] }}
               className="paper"> */}
-              <img
-                // width={2}
-                sm={12}
-                src={`${fav.photo_url}?w=164&h=164&fit=crop&auto=format`}
-              ></img>
-              <ul>
-                <li>Description: {fav.description}</li>
-              </ul>
+            <img
+              src={`${fav.photo_url}?w=164&h=164&fit=crop&auto=format`}
+            ></img>
+            <table>
+              <tr>
+                <th></th>
+                <th></th>
+              </tr>
+              <tr>
+                <td>Description:</td>
+                <td>{fav.description}</td>
+              </tr>
+              <tr>
+                <td>Color:</td>
+                <td>{fav.hat_color}</td>
+              </tr>
+              <tr>
+                <td>Style:</td>
+                <td>{fav.hat_style}</td>
+              </tr>
+              <tr>
+                <td>Fabric:</td>
+                <td>{fav.hat_fabric}</td>
+              </tr>
+              <tr>
+                <td>Vibe:</td>
+                <td>{fav.hat_vibe}</td>
+              </tr>
+            </table>
             {/* </Paper> */}
           </Grid>
         ))}
