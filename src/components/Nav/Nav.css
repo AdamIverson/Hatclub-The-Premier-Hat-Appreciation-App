@@ -5,7 +5,7 @@
   align-items: center;
   border-radius: 25px;
   background: #7c7ff6;
-  overflow: hidden;
+  border: 5px double #F5F37D;
 }
 
 
@@ -15,10 +15,10 @@
 
 .nav-title {
   font-family: 'Lexend', sans-serif;
-  font-size: 4rem;
+  font-size: 5rem;
   font-weight: 900;
   color: #f5f37d;
-  padding-left: 10px;
+  padding-left: 2rem;
   margin: 0;
   text-align: center;
 }

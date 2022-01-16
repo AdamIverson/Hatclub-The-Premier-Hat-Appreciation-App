@@ -139,14 +139,13 @@ function UserPage() {
   return (
     <div alignItems="center" className="container">
       <h1>Welcome, {user.username}!</h1>
-      <p>Your ID is: {user.id}</p>
+      {/* <p>Your ID is: {user.id}</p> */}
       <h2>Your Hats</h2>
       <Grid container alignItems="center">
         {hats.map((hat) => (
           <Grid 
             className="photos" 
             key={hat.id} 
-            alignItems="center" 
             item>
             <img src={hat.photo_url}></img>
             <ul className="list">
@@ -197,9 +196,12 @@ function UserPage() {
             </ButtonGroup> */}
 
             <div id={hat.id} className="hidden">
-              <Paper>
-                <h1>Edit Hat</h1>
+              <Paper
+                className="paper"
+                style={{ width: '400px', justifyContent: 'center', backgroundColor: '#eff0f7'}}>
+                <h3>Edit Hat</h3>
                 <form
+                  className="editForm"
                   // className="edit-form hidden"
                   onSubmit={editHat}
                 >

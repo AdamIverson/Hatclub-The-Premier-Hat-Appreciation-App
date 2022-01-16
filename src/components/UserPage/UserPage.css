@@ -3,7 +3,13 @@ form {
 }
 
 img {
-  max-width: 100%;;
+  max-width: 100%;
+  border: 10px double #F5F37D;
+}
+
+h3 {
+  font-size: 2rem;
+  text-align: center;
 }
 
 .photos {
@@ -24,8 +30,16 @@ img {
 
 .list {
   list-style-type: none;
-  background-color: #7B1FA2;
+  background-color: #7c7ff6;
   color: #F5F37D;
   padding: 5rem;
   border-radius: 25px;
+  margin: 1rem;
+  border: 10px double #F5F37D;
+}
+
+
+.paper {
+  border: 10px double #797bf0;
+  align-items: center;
 }

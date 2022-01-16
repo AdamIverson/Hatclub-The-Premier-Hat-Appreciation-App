@@ -16,26 +16,17 @@ export default function ViewModeButtons() {
   }
   return (
     <div>
-      <ButtonGroup size="small" sx={{ m: 2 }}>
-        {/* <Button
-          className="btn"
-          sx={{ m: 2 }}
-          color="secondary"
-          variant="contained"
-          onClick={lexendFont}
-        >
-          Lexend Font
-        </Button> */}
         <Button
+          size="small"
+          style={{ backgroundColor: '#4d4e9f', color: '#f5f37d' }}
           sx={{ m: 2 }}
           className="btn"
           variant="contained"
-          color="secondary"
+          // color="secondary"
           onClick={darkMode}
         >
           light/dark 
         </Button>
-      </ButtonGroup>
     </div>
   );
 }

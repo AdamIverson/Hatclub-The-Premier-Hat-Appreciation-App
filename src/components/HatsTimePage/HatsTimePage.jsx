@@ -121,7 +121,8 @@ export default function HatsTimePage() {
             className="photo"
             key={hat.id} 
             item 
-            sx={{ boxShadow: 20, m: 1 }}>
+            sx={{ boxShadow: 20, m: 1 }}
+            style={{ height:'100%' }}>
             <img
               src={`${hat.photo_url}?w=164&h=164&fit=crop&auto=format`}
               srcSet={`${hat.photo_url}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
