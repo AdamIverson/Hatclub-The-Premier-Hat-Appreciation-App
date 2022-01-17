@@ -10,7 +10,7 @@ img {
   padding: 20px;
   border: 10px double #f5f37d;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
   color: #f5f37d;
 }
 

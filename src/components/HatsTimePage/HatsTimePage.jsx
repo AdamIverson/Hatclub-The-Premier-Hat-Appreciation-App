@@ -108,18 +108,20 @@ export default function HatsTimePage() {
       <h1>hats time!</h1>
       <Grid
         m={3}
+        xs={12}
+        flexWrap={"wrap-reverse"}
         className="grid"
         backgroundColor="#551A8B"
         rowSpacing={1}
         borderRadius={25}
         columnSpacing={{xs: 1, sm: 2 }}
-        justifyContent="center"
+        justifyContent="space-around"
         alignItems="center"
         container 
         >
         {hats.map((hat) => (
           <Grid 
-            xs={3}
+            xs={5}
             m={4}
             borderRadius={5}
             className="card"
@@ -129,6 +131,7 @@ export default function HatsTimePage() {
             color="#f5f37d"
             item>
             <img
+              xs={5}
               src={`${hat.photo_url}?w=164&h=164&fit=crop&auto=format`}
               alt={hat.description}
               loading="lazy"
