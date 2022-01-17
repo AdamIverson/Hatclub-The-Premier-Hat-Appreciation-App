@@ -6,6 +6,9 @@ const {
 } = require("../modules/authentication-middleware");
 
 // GET all of the favorited photos for the logged-in user
+// PROHIBIT anyone else from getting in there
+// joining hat and favorite tables on id number
+// upon review, I wonder if the params :id isn't redundant
 router.get("/:id", rejectUnauthenticated, (req, res) => {
   console.log("fav.router GET req.user.id:", req.user.id);
 
@@ -26,6 +29,8 @@ router.get("/:id", rejectUnauthenticated, (req, res) => {
 });
 
 // POST route to ADD hats to the favorite table
+// this time without params
+// works fine, could probably remove some code above, but later
 router.post("/", rejectUnauthenticated, (req, res) => {
   console.log("req.user.id:", req.user.id);
 
@@ -44,6 +49,9 @@ router.post("/", rejectUnauthenticated, (req, res) => {
     });
 });
 
+
+// DELETE hat from favorite table
+// this time the params is carrying the hat_id, so it is actually necessary
 router.delete("/:id", rejectUnauthenticated, (req, res) => {
   //req.params as "id" value of the item
   console.log("req.params", req.params.id);

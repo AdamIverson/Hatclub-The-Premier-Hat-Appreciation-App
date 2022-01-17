@@ -5,6 +5,8 @@ const {
   rejectUnauthenticated,
 } = require("../modules/authentication-middleware");
 
+// GET route for all of the hats in the hats table
+// this route is unprotected
 router.get("/", (req, res) => {
   console.log("req.user", req.user);
   pool
@@ -16,6 +18,8 @@ router.get("/", (req, res) => {
     });
 });
 
+// POST route for adding hats
+// creator_id is pulled from req.user.id
 router.post("/", rejectUnauthenticated, (req, res) => {
   console.log(req.user);
   console.log(req.body);
@@ -44,12 +48,7 @@ router.post("/", rejectUnauthenticated, (req, res) => {
 });
 
 router.delete("/:id", (req, res) => {
-  //req.params as "id" value of the item
-  // console.log(req.params.id);
-  // //req.user.id as value of "user_id"
-  console.log(req.user.id);
 
-  //query SELECT * FROM "hat" WHERE "id" = req.params.id
   pool
     .query(`SELECT * FROM "hat" WHERE "id"=$1`, [req.params.id])
     .then((result) => {
@@ -78,9 +77,9 @@ router.delete("/:id", (req, res) => {
     });
 });
 
+// look at this, a real live PUT route in the wild
+// id number of hat passed in params
 router.put("/:id", rejectUnauthenticated, (req, res) => {
-  console.log('req.params.id:', req.params.id);
-  console.log(req.body);
   
   const query2 = `UPDATE "hat"
   SET "description"=$1, "photo_url"=$2, "hat_color"=$3, "hat_style"=$4, "hat_fabric"=$5, "hat_vibe"=$6
@@ -100,11 +99,6 @@ router.put("/:id", rejectUnauthenticated, (req, res) => {
     .catch((error) => {
       console.log("error:", error);
     });
-  //req.params as "id" value of the item
-  // console.log(req.params.id);
-  // //req.user.id as value of "user_id"
-  console.log(req.user.id);
-
 });
 
 module.exports = router;

@@ -8,6 +8,7 @@ const { rejectUnauthenticated } = require('../modules/authentication-middleware'
 // could this be done in the hat router? probably
 // why is this here if it could be in the hat router? because I put it here and it works
 
+// GET route to retrieve data for one hat that has been selected for editing
 router.get("/:id", (req, res) => {
   console.log("fetchOneHat req.user:", req.user);
   console.log("editOneHat req.params.id:", req.params.id);
