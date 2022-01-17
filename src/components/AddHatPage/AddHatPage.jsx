@@ -64,10 +64,7 @@ function AddHatPage() {
   return (
     <>
       <h1>Add One Hat</h1>
-      <Paper
-        backgroundColor="#f5f37d"
-        alignItems="center"
-        justifyContent="center">
+      <Paper>
         <form 
           onSubmit={(e) => addNewHat(e)}
           className="editForm">
@@ -137,15 +134,23 @@ function AddHatPage() {
             focused
           />
           {/* <br /> */}
-          <Button
+          {/* <Button
             p={30}
             className="edit-btn"
             type="submit" 
             // color="secondary" 
             variant="contained">
             Add One Hat
-          </Button>
+          </Button> */}
         </form>
+        <Button
+            sx={{ backgroundColor: "#7C7FF6", color: "#F5F37D" }}
+            className="edit-btn"
+            type="submit" 
+            // color="secondary" 
+            variant="contained">
+            Add One Hat
+          </Button>
       </Paper>
     </>
   );

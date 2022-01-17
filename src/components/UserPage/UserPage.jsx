@@ -155,58 +155,62 @@ function UserPage() {
           >
             <img src={hat.photo_url}></img>
             <table className="list">
-              <tr>
-                <td>Hat Tag:</td>
-                <td>{hat.id}</td>
-              </tr>
-              <tr>
-                <td>Description:</td>
-                <td>{hat.description}</td>
-              </tr>
-              <tr>
-                <td>Color:</td>
-                <td>{hat.hat_color}</td>
-              </tr>
-              <tr>
-                <td>Style:</td>
-                <td>{hat.hat_style}</td>
-              </tr>
-              <tr>
-                <td>Fabric:</td>
-                <td>{hat.hat_fabric}</td>
-              </tr>
-              <tr>
-                <td>Vibe:</td>
-                <td>{hat.hat_vibe}</td>
-              </tr>
-              <tr>
-                <td>
-                  <Button value={hat.id} variant="contained" onClick={editBtn}>
-                    Edit
-                  </Button>
-                  <Button
-                    sx={{ m: 1 }}
-                    onClick={(e) => deleteHat(hat.id)}
-                    className="photoButton"
-                    variant="contained"
-                    color="warning"
-                  >
-                    DELETE
-                  </Button>
-                </td>
-                <td></td>
-              </tr>
+              <tbody>
+                
+                <tr>
+                  <td>Hat Tag:</td>
+                  <td>{hat.id}</td>
+                </tr>
+                <tr>
+                  <td>Description:</td>
+                  <td>{hat.description}</td>
+                </tr>
+                <tr>
+                  <td>Color:</td>
+                  <td>{hat.hat_color}</td>
+                </tr>
+                <tr>
+                  <td>Style:</td>
+                  <td>{hat.hat_style}</td>
+                </tr>
+                <tr>
+                  <td>Fabric:</td>
+                  <td>{hat.hat_fabric}</td>
+                </tr>
+                <tr>
+                  <td>Vibe:</td>
+                  <td>{hat.hat_vibe}</td>
+                </tr>
+                <tr>
+                  <td>
+                    <Button
+                      value={hat.id}
+                      variant="contained"
+                      onClick={editBtn}
+                    >
+                      Edit
+                    </Button>
+                    <Button
+                      sx={{ m: 1 }}
+                      onClick={(e) => deleteHat(hat.id)}
+                      className="photoButton"
+                      variant="contained"
+                      color="warning"
+                    >
+                      DELETE
+                    </Button>
+                  </td>
+                  <td></td>
+                </tr>
+              </tbody>
             </table>
 
             <div id={hat.id} className="hidden">
               <Paper
                 className="paper"
-                justifyContent="center"
-                backgroundColor="#eff0f7"
               >
                 <h3>Edit Hat</h3>
                 <form
-                  className="editForm"
                   // className="edit-form hidden"
                   onSubmit={editHat}
                 >
@@ -270,10 +274,12 @@ function UserPage() {
                     focused
                   />
                   <br />
-                  <Button 
+                  <Button
                     size="small"
                     color="error"
-                    type="submit" variant="contained">
+                    type="submit"
+                    variant="contained"
+                  >
                     Submit Edit
                   </Button>
                 </form>

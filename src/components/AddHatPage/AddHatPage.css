@@ -1,12 +1,9 @@
 .edit-btn {
-  margin: 2rem;
-  color: red;
+  color: #F5F37D;
+  background-color: #7C7FF6;
 }
 
-.editForm {
-  color: red;
-}
-
-body {
-  background-color: red;
+form {
+  align-items: bottom;
+  margin: 3rem;
 }

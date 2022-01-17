@@ -1,7 +1,3 @@
-form {
-  display: inline;
-}
-
 img {
   border-radius: 25px;
   border: 10px double #f5f37d;
@@ -30,10 +26,10 @@ h3 {
 }
 
 .paper {
+  justify-content: center;
   padding: 10px;
   width: 20rem;
   border: 10px double #797bf0;
-  align-items: center;
   box-shadow: 10px 10px white;
 }
 

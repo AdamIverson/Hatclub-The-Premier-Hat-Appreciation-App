@@ -44,6 +44,7 @@ function FavoritesPage() {
               src={`${fav.photo_url}?w=164&h=164&fit=crop&auto=format`}
             ></img>
             <table>
+              <thead></thead>
               <tr>
                 <td>Hat Tag:</td>
                 <td>{fav.hat_id}</td>

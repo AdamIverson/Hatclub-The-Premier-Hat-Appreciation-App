@@ -69,7 +69,7 @@ export default function HatsTimePage() {
           return (
             <Button
               size="small"
-              sx={{ color: "yellow", boxShadow: 10 }}
+              sx={{ color: "#4D4E9F", backgroundColor: "#f50e0e", boxShadow: 10 }}
               id={hat.id}
               onClick={(e) => unFavHat(hat)}
               variant="contained"
@@ -84,7 +84,7 @@ export default function HatsTimePage() {
       return (
         <Button
           size="small"
-          sx={{ color: "yellow", boxShadow: 10 }}
+          sx={{ color: "#f5f37d", backgroundColor: "#4d4ea0", boxShadow: 10 }}
           onClick={(e) => favHat(hat)}
           id={hat.id}
           m={3}
