@@ -8,7 +8,7 @@ const {
 router.get("/", (req, res) => {
   console.log("req.user", req.user);
   pool
-    .query(`SELECT * FROM "hat" JOIN "user" ON "hat"."creator_id"="user"."id";`)
+    .query(`SELECT * FROM "hat";`)
     .then((results) => res.send(results.rows))
     .catch((error) => {
       console.log('ERROR SELECTING FROM "HAT"', error);

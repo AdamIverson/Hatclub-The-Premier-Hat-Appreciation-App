@@ -108,7 +108,6 @@ export default function HatsTimePage() {
       <h1>hats time!</h1>
       <Grid
         m={3}
-        xs={12}
         flexWrap={"wrap-reverse"}
         className="grid"
         backgroundColor="#551A8B"
@@ -121,7 +120,6 @@ export default function HatsTimePage() {
         >
         {hats.map((hat) => (
           <Grid 
-            xs={5}
             m={4}
             borderRadius={5}
             className="card"
@@ -131,7 +129,6 @@ export default function HatsTimePage() {
             color="#f5f37d"
             item>
             <img
-              xs={5}
               src={`${hat.photo_url}?w=164&h=164&fit=crop&auto=format`}
               alt={hat.description}
               loading="lazy"
@@ -141,7 +138,6 @@ export default function HatsTimePage() {
               <FavBtn hat={hat} />
             <ul>
               <li>Hat Tag: {hat.id}</li>
-              <li>Creator: {hat.username}</li>
               <li>Description: {hat.description}</li>
               <li>Vibe: {hat.hat_vibe}</li>
               <li>Fabric: {hat.hat_fabric}</li>
