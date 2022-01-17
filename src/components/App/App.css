@@ -14,14 +14,12 @@ h1 {
   text-align: center;
   font-size: 5rem;
   color: #F5F37D;
-  /* text-shadow: 2px 3px #F5F37D */
 }
 
 h2 {
   text-align: center;
   font-size: 4rem;
   color: #F5F37D;
-  /* text-shadow: 2px 3px #F5F37D; */
 }
 
 
@@ -90,10 +88,10 @@ Button
   font-family: 'Lexend', sans-serif;
 }
 
-.dark-mode {
+/* .dark-mode {
   background-color: #4d4ea0;
   color: #f5f37d;
-}
+} */
 
 .hidden {
   display: none;

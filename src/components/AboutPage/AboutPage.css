@@ -1,0 +1,12 @@
+.mediums {
+  text-align: left;
+}
+
+.rules{
+  border: 3px solid #F5F37D;
+}
+
+li {
+  color: #F5F37D;
+  font-size: 1.5rem;
+}

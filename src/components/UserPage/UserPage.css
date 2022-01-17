@@ -17,19 +17,26 @@ h3 {
 }
 
 .list {
-  height: 34rem;
+  width: 30rem;
+  height: 31rem;
   list-style-type: none;
   background-color: #7c7ff6;
   color: #f5f37d;
-  padding: 5rem;
+  padding: 2rem;
   border-radius: 25px;
-  margin: 1rem;
+  margin: 3rem;
   border: 10px double #f5f37d;
   box-shadow: 10px 10px white;
 }
 
 .paper {
+  padding: 10px;
+  width: 20rem;
   border: 10px double #797bf0;
   align-items: center;
   box-shadow: 10px 10px white;
+}
+
+td {
+  padding: 10px;
 }
