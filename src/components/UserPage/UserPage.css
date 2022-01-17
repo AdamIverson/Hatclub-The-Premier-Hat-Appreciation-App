@@ -17,6 +17,7 @@ h3 {
 }
 
 .list {
+  height: 34rem;
   list-style-type: none;
   background-color: #7c7ff6;
   color: #f5f37d;

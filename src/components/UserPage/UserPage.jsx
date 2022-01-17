@@ -146,9 +146,10 @@ function UserPage() {
       <Grid container spacing={30}>
         {hats.map((hat) => (
           <Grid 
+            alignItems="center"
             display={"flex"}
-            justifyContent={"flex-start"}
-            lg={12}
+            justifyContent={"center"}
+            xs={12}
             key={hat.id} 
             container
             item>
