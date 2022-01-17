@@ -5,16 +5,23 @@ body,
 }
 
 body {
-  font-family:'Times New Roman', Times, serif;
-  /* margin: 0px; */
-  background-color: #f6f47cbe;
+  font-family:'Lexend', serif;
+  margin: 5rem;
+  background-color: #4d4ea0;
 }
 
-img {
-  max-width: 100%;
-  padding: .25em;
-  display: inline-block;
+h1 {
+  text-align: center;
+  font-size: 5rem;
+  color: #F5F37D;
 }
+
+h2 {
+  text-align: center;
+  font-size: 4rem;
+  color: #F5F37D;
+}
+
 
 /* --------------------------------------------------------------------------------
 Container
@@ -81,10 +88,10 @@ Button
   font-family: 'Lexend', sans-serif;
 }
 
-.dark-mode {
+/* .dark-mode {
   background-color: #4d4ea0;
   color: #f5f37d;
-}
+} */
 
 .hidden {
   display: none;
@@ -109,14 +116,15 @@ Form Treatment
 -------------------------------------------------------------------------------- */
 
 .formPanel {
+  color: #F5F37D;
   box-sizing: border-box;
   width: 400px;
   max-width: 100%;
   padding: 25px;
   margin: 0 auto 20px;
-  background-color: #efefef;
+  /* background-color: #efefef; */
   border-radius: 3px;
-  box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4);
+  /* box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4); */
 }
 
 input {

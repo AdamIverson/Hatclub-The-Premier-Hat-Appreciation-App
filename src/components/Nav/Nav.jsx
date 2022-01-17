@@ -9,14 +9,18 @@ import { Box, Container } from "@mui/material";
 function Nav() {
   const user = useSelector((store) => store.user);
 
+
   return (
-    <Container className="nav">
+    <Box 
+      id="navbar"
+      className="nav"
+      boxShadow={20}>
       <Link to="/home">
         <h1 className="nav-title">hatclub</h1>
       </Link>
       <br />
 
-      <ViewModeButtons />
+      {/* <ViewModeButtons /> */}
       
       <div className="buttons">
         <Link className="navLink" to="/hats_time">
@@ -76,7 +80,7 @@ function Nav() {
           Info Page
         </Link> */}
       </div>
-    </Container>
+    </Box>
   );
 }
 

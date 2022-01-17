@@ -1,0 +1,38 @@
+img {
+  border-radius: 25px;
+  border: 10px double #f5f37d;
+  box-shadow: 10px 10px white;
+  max-width: 100%;
+  padding: 0.25em;
+  display: inline-block;
+}
+
+h3 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.list {
+  width: 30rem;
+  height: 35rem;
+  list-style-type: none;
+  background-color: #7c7ff6;
+  color: #f5f37d;
+  padding: 2rem;
+  border-radius: 25px;
+  margin: 3rem;
+  border: 10px double #f5f37d;
+  box-shadow: 10px 10px white;
+}
+
+.paper {
+  justify-content: center;
+  padding: 10px;
+  width: 20rem;
+  border: 10px double #797bf0;
+  box-shadow: 10px 10px white;
+}
+
+td {
+  padding: 10px;
+}

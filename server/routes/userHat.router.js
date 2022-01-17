@@ -8,7 +8,7 @@ const { rejectUnauthenticated } = require('../modules/authentication-middleware'
 // could this be done in the hat router? probably
 // why is this here if it could be in the hat router? because I put it here and it works
 
-router.get("/", (req, res) => {
+router.get("/", rejectUnauthenticated, (req, res) => {
   console.log("get fav route req.user.id:", req.user.id);
   
   const idToGet = req.user.id;

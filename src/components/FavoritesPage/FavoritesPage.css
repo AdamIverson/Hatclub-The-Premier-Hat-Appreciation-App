@@ -1,0 +1,17 @@
+.outer {
+  background-color:  #7c7ff6;
+  border-radius: 25px;
+  margin: 3rem;
+  border: 10px double #551A8B;
+}
+
+table {
+  height: 50%;
+  font-size: 2.5rem;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+img {
+  width: 35rem;
+}
