@@ -272,7 +272,8 @@ function UserPage() {
                   <br />
                   <Button 
                     size="small"
-                    type="submit" variant="outlined">
+                    color="error"
+                    type="submit" variant="contained">
                     Submit Edit
                   </Button>
                 </form>

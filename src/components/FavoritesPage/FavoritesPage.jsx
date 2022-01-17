@@ -45,8 +45,8 @@ function FavoritesPage() {
             ></img>
             <table>
               <tr>
-                <th></th>
-                <th></th>
+                <td>Hat Tag:</td>
+                <td>{fav.hat_id}</td>
               </tr>
               <tr>
                 <td>Description:</td>

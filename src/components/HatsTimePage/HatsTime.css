@@ -1,7 +1,6 @@
 img {
   margin: 1rem;
   border-radius: 25px;
-  width: 75%;
 }
 
 .photo {
@@ -16,8 +15,13 @@ img {
 
 .card {
   box-shadow: 10px 10px #f5f37d;
+  height: 65rem;
 }
 
 .grid {
   box-shadow: 10px 10px #f5f37d;
+}
+
+ul {
+  list-style-type: none;
 }

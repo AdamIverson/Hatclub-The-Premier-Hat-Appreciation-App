@@ -140,9 +140,11 @@ export default function HatsTimePage() {
             <br/>
               <FavBtn hat={hat} />
             <ul>
-              <li>Hat ID: {hat.id}</li>
-              <li>Creator: FIX THIS PAL</li>
+              <li>Hat Tag: {hat.id}</li>
+              <li>Creator: {hat.username}</li>
               <li>Description: {hat.description}</li>
+              <li>Vibe: {hat.hat_vibe}</li>
+              <li>Fabric: {hat.hat_fabric}</li>
               <li>Vibe: {hat.hat_vibe}</li>
             </ul>
           </Grid>
