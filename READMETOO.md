@@ -1,5 +1,3 @@
-![License](https://img.shields.io/github/license/AdamIverson/https://github.com/AdamIverson/prime-solo-project-2021.svg?style=for-the-badge) ![Repo Size](https://img.shields.io/github/languages/code-size/AdamIverson/https://github.com/AdamIverson/prime-solo-project-2021.svg?style=for-the-badge) ![TOP_LANGUAGE](https://img.shields.io/github/languages/top/AdamIverson/https://github.com/AdamIverson/prime-solo-project-2021.svg?style=for-the-badge) ![FORKS](https://img.shields.io/github/forks/AdamIverson/https://github.com/AdamIverson/prime-solo-project-2021.svg?style=for-the-badge&social) ![Stars](https://img.shields.io/github/stars/AdamIverson/https://github.com/AdamIverson/prime-solo-project-2021.svg?style=for-the-badge)
-    
 # hatclub
 
 ## Table of Contents
@@ -23,7 +21,7 @@ hatclub is a PERN stack CRUD app developed while in attendance at Prime Academy'
 
 ## Screenshots
 
-<img src="<img src="/Users/adamiverson/Desktop/Screen Shot 2022-01-17 at 3.25.33 PM.png" />" />## Built With
+## Built With
 
 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" height="40px" width="40px" /></a><a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" height="40px" width="40px" /></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" height="40px" width="40px" /></a><a href="https://material-ui.com/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/materialui/materialui-original.svg" height="40px" width="40px" /></a><a href="https://nodejs.org/en/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" height="40px" width="40px" /></a><a href="https://www.postgresql.org/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg" height="40px" width="40px" /></a><a href="https://reactjs.org/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" height="40px" width="40px" /></a><a href="https://redux.js.org/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg" height="40px" width="40px" /></a>
 
@@ -59,4 +57,4 @@ Matt Black, along with the rest of the faculty and staff at Prime Digital Academ
 
 ## Contacts
 
-<a href="https://www.linkedin.com/in/Adam Iverson"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>  <a href="mailto:aciverso@gmail.com"><img src=https://raw.githubusercontent.com/johnturner4004/readme-generator/master/src/components/assets/images/email_me_button_icon_151852.svg /></a>
+<a href="https://www.linkedin.com/in/Adam Iverson"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>

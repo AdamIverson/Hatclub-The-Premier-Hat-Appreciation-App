@@ -134,23 +134,15 @@ function AddHatPage() {
             focused
           />
           {/* <br /> */}
-          {/* <Button
+          <Button
             p={30}
             className="edit-btn"
             type="submit" 
             // color="secondary" 
             variant="contained">
             Add One Hat
-          </Button> */}
-        </form>
-        <Button
-            sx={{ backgroundColor: "#7C7FF6", color: "#F5F37D" }}
-            className="edit-btn"
-            type="submit" 
-            // color="secondary" 
-            variant="contained">
-            Add One Hat
           </Button>
+        </form>
       </Paper>
     </>
   );
