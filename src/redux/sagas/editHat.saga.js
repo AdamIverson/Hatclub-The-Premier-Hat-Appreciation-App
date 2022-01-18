@@ -1,5 +1,4 @@
 // EDIT your hat
-// this could definitely look different in the near future
 
 import { put, takeLatest } from "redux-saga/effects";
 import axios from "axios";

@@ -1,4 +1,4 @@
-// not wired in or functional, meant to be used down the line to populate edit form
+// this one populates the editForm with appropriate data
 
 const editHat = (state = {}, action) => {
   console.log("editHat.reducer action:", action);

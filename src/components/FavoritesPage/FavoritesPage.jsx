@@ -37,14 +37,18 @@ function FavoritesPage() {
             display="flex"
             color="#f5f37d"
           >
-            {/* <Paper 
-              sx={{ background: purple[300] }}
-              className="paper"> */}
             <img
               src={`${fav.photo_url}?w=164&h=164&fit=crop&auto=format`}
+              alt={`${fav.description}`}
             ></img>
             <table>
-              <thead></thead>
+              <thead>
+                <th>
+                  HATCREATOR:
+                </th>
+                <th>{fav.creator_id}</th>
+              </thead>
+              <hr />
               <tr>
                 <td>Hat Tag:</td>
                 <td>{fav.hat_id}</td>
@@ -70,7 +74,6 @@ function FavoritesPage() {
                 <td>{fav.hat_vibe}</td>
               </tr>
             </table>
-            {/* </Paper> */}
           </Grid>
         ))}
       </Grid>

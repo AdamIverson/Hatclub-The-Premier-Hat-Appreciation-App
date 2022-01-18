@@ -1,4 +1,4 @@
-// sets the faves
+// holds the faves
 // good job team
 
 const setFavs = (state = [], action) => {

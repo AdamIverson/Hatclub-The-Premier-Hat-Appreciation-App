@@ -1,4 +1,4 @@
-// gets all of the hats for the hats time page
+// holds all of the hats for the hats time page
 
 const setHats = (state = [], action) => {
   console.log(action);

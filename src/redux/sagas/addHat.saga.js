@@ -9,7 +9,7 @@ function* addHat(action) {
       url: "/api/hat",
       data: action.payload,
     });
-    // call the dispatch that GETs the hats
+    // send the dispatch that GETs all of the hats after one has been added
     yield put({
       type: "GET_HATS",
     });

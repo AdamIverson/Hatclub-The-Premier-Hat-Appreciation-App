@@ -3,17 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   Box,
   Button,
-  ButtonGroup,
-  Card,
   Grid,
-  ListItem,
-  ImageList,
-  ImageListItem,
-  ImageListItemBar,
-  TextField,
-  NativeSelect,
 } from "@mui/material";
-import { boxShadow } from '@mui/system'
 import "./HatsTime.css";
 
 export default function HatsTimePage() {
@@ -55,9 +46,9 @@ export default function HatsTimePage() {
     });
   };
 
-  // // This code is meant to teach me how okay it is to move code into a component
-  // // But this code does not collect the id of the hat, so when it's clicked it only
-  // //  submits the user.id - which is frustrating
+  // This code is meant to teach me how okay it is to move code into a component
+  // this code is not in its own jsx file because i put it here and it works
+  // and when I move it its own jsx file it does not work
   function FavBtn({ hat }) {
     console.log("FavBtn Click:", hat.id);
     console.log("hat:", hat);
@@ -69,7 +60,7 @@ export default function HatsTimePage() {
           return (
             <Button
               size="small"
-              sx={{ color: "#4D4E9F", backgroundColor: "#f50e0e", boxShadow: 10 }}
+              sx={{ color: "#F5F37D", backgroundColor: "#631515", boxShadow: 10 }}
               id={hat.id}
               onClick={(e) => unFavHat(hat)}
               variant="contained"
@@ -108,7 +99,7 @@ export default function HatsTimePage() {
       <h1>hats time!</h1>
       <Grid
         m={3}
-        flexWrap={"wrap-reverse"}
+        // flexWrap={"wrap-reverse"}
         className="grid"
         backgroundColor="#551A8B"
         rowSpacing={1}
@@ -120,7 +111,7 @@ export default function HatsTimePage() {
         >
         {hats.map((hat) => (
           <Grid 
-            m={4}
+            m={5}
             borderRadius={5}
             className="card"
             backgroundColor="#7C7FF5"
@@ -139,7 +130,8 @@ export default function HatsTimePage() {
             <ul>
               <li>Hat Tag: {hat.id}</li>
               <li>Description: {hat.description}</li>
-              <li>Vibe: {hat.hat_vibe}</li>
+              <li>Color: {hat.hat_color}</li>
+              <li>Style: {hat.hat_style}</li>
               <li>Fabric: {hat.hat_fabric}</li>
               <li>Vibe: {hat.hat_vibe}</li>
             </ul>

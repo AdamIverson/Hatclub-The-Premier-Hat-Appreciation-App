@@ -38,7 +38,7 @@ CREATE TABLE "user" (
 	VALUES (1, 1), (1, 4), (2, 2), (2, 3), (3, 1);
 
 INSERT INTO "hat" ("description", "photo_url", "hat_color", "hat_style", "hat_fabric", "hat_vibe", "creator_id")
-	VALUES ('beautiful period specific fedora resting on a park bench in winter', 'http://www.adamiversonphotography.com/uploads/1/0/7/0/107020049/film-beetle-convertible-1_orig.jpg', 'purple', 'fedora', 'felt', 'fancy pirate', 1),
-	('minnesota twins wool ballcap new', 'http://www.adamiversonphotography.com/uploads/1/0/7/0/107020049/film-beetle-convertible-1_orig.jpg', 'blue', 'baseball', 'wool', 'sporty', 1),
-	('etsy stocking cap with flower knit into brim on the side of the road, smoking a benson & hedges okay what im saying here is that this hat is my grandma', 'http://www.adamiversonphotography.com/uploads/1/0/7/0/107020049/film-beetle-convertible-1_orig.jpg', 'brown', 'knit', 'wool', 'winter sunday gramma', 2),
-	('abe is not generally one for headwear, but he has been know to don a pillowhat later on in the evening', 'http://www.adamiversonphotography.com/uploads/1/0/7/0/107020049/film-beetle-convertible-1_orig.jpg', 'couch brown', 'throw pillow', 'fuzzy but tough', 'nap chic', 3);
+	VALUES ('beautiful period specific fedora resting on a park bench in winter', 'http://www.adamiversonphotography.com/uploads/1/0/7/0/107020049/prime-hatclub-2022-1_orig.jpg', 'purple', 'fedora', 'felt', 'fancy pirate', 1),
+	('minnesota twins wool ballcap new', 'http://www.adamiversonphotography.com/uploads/1/0/7/0/107020049/prime-hatclub-2022-c-1_orig.jpg', 'blue', 'baseball', 'wool', 'sporty', 1),
+	('etsy stocking cap with flower knit into brim on the side of the road, smoking a benson & hedges okay what im saying here is that this hat is my grandma', 'http://www.adamiversonphotography.com/uploads/1/0/7/0/107020049/prime-hatclub-2022-c-2_orig.jpg', 'brown', 'knit', 'wool', 'winter sunday gramma', 2),
+	('abe is not generally one for headwear, but he has been know to don a pillowhat later on in the evening', 'http://www.adamiversonphotography.com/uploads/1/0/7/0/107020049/prime-hatclub-2022-e-1_orig.jpg', 'couch brown', 'throw pillow', 'fuzzy but tough', 'nap chic', 3);
