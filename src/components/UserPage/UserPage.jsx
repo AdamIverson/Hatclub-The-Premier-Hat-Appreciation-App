@@ -129,7 +129,7 @@ function UserPage() {
   };
 
   return (
-    <div className="container">
+    <div >
       <h1>look at your dang hats {user.username}</h1>
       {/* <p>Your ID is: {user.id}</p> */}
       <Grid container spacing={30}>
@@ -151,22 +151,27 @@ function UserPage() {
                   <td>Hat Tag:</td>
                   <td>{hat.id}</td>
                 </tr>
+                <hr/>
                 <tr>
                   <td>Description:</td>
                   <td>{hat.description}</td>
                 </tr>
+                <hr/>
                 <tr>
                   <td>Color:</td>
                   <td>{hat.hat_color}</td>
                 </tr>
+                <hr />
                 <tr>
                   <td>Style:</td>
                   <td>{hat.hat_style}</td>
                 </tr>
+                <hr/>
                 <tr>
                   <td>Fabric:</td>
                   <td>{hat.hat_fabric}</td>
                 </tr>
+                <hr/>
                 <tr>
                   <td>Vibe:</td>
                   <td>{hat.hat_vibe}</td>

@@ -12,7 +12,7 @@ function AboutPage() {
     <div className="container">
       <Paper
         sx={{ backgroundColor: "#551A8B", borderRadius: 5, boxShadow: 20, p: 3 }}>
-      <h1 className="topsies">Rules and Info</h1>
+      <h1 className="topsies">hat facts</h1>
       <ol>
         <li>anyone wearing a hat can be in hatclub if they want to be in hatclub</li>
         <li>anything can be a hat if it's on your head</li>
@@ -21,12 +21,12 @@ function AboutPage() {
       <br/>
       <h2 className="mediums">Tech Used</h2>
       <ul>
-        <li>HTML, CSS, PostgreSQL, Express, React, Node.js, Redux, Saga, Material UI, Git and GitHub</li>
+        <li>HTML, CSS, PostgreSQL, Express, React, Node.js, Redux, Redux-Saga, Material UI, Git and GitHub</li>
       </ul>
       <br/>
       <h2 className="mediums">What's next for hatclub?</h2>
       <ul>
-      <li>aria labels</li>
+      <li>aria labels and responsive design</li>
       </ul>
       <br/>
       <h2 className="mediums">Biggest Challenge</h2>

@@ -60,7 +60,7 @@ export default function HatsTimePage() {
           return (
             <Button
               size="small"
-              sx={{ color: "#4D4E9F", backgroundColor: "#f50e0e", boxShadow: 10 }}
+              sx={{ color: "#F5F37D", backgroundColor: "#631515", boxShadow: 10 }}
               id={hat.id}
               onClick={(e) => unFavHat(hat)}
               variant="contained"
@@ -99,7 +99,7 @@ export default function HatsTimePage() {
       <h1>hats time!</h1>
       <Grid
         m={3}
-        flexWrap={"wrap-reverse"}
+        // flexWrap={"wrap-reverse"}
         className="grid"
         backgroundColor="#551A8B"
         rowSpacing={1}
@@ -111,7 +111,7 @@ export default function HatsTimePage() {
         >
         {hats.map((hat) => (
           <Grid 
-            m={4}
+            m={5}
             borderRadius={5}
             className="card"
             backgroundColor="#7C7FF5"
@@ -130,7 +130,8 @@ export default function HatsTimePage() {
             <ul>
               <li>Hat Tag: {hat.id}</li>
               <li>Description: {hat.description}</li>
-              <li>Vibe: {hat.hat_vibe}</li>
+              <li>Color: {hat.hat_color}</li>
+              <li>Style: {hat.hat_style}</li>
               <li>Fabric: {hat.hat_fabric}</li>
               <li>Vibe: {hat.hat_vibe}</li>
             </ul>
