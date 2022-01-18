@@ -17,7 +17,7 @@ function* deleteHat(action) {
     });
   } catch (error) {
     window.alert("You are not authorized to delete this image.");
-    // console.log("error deleting from Client to Server", error);
+    console.log("error deleting from Client to Server", error);
   }
 }
 

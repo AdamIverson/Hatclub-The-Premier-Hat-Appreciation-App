@@ -9,13 +9,13 @@ function* deleteFav(action) {
       url: `/api/fav/${action.payload.hat_id}`,
     });
     //action.payload will be req.params on the ^^ server side ^^
-    // call the dispatch that GETs the shelf items
+    // call the dispatch that GETs the hats
     yield put({
       type: "GET_FAVS",
     });
   } catch (error) {
     window.alert("You are not authorized to delete this image.");
-    // console.log("error deleting from Client to Server", error);
+    console.log("error deleting from Client to Server", error);
   }
 }
 

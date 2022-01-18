@@ -1,3 +1,5 @@
+// holds data for one hat, to be edited
+
 const editOneHat = (state = {}, action) => {
   console.log("editOneHat.reducer action:", action);
 
