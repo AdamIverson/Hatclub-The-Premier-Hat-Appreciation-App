@@ -3,17 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   Box,
   Button,
-  ButtonGroup,
-  Card,
   Grid,
-  ListItem,
-  ImageList,
-  ImageListItem,
-  ImageListItemBar,
-  TextField,
-  NativeSelect,
 } from "@mui/material";
-import { boxShadow } from '@mui/system'
 import "./HatsTime.css";
 
 export default function HatsTimePage() {
@@ -55,9 +46,9 @@ export default function HatsTimePage() {
     });
   };
 
-  // // This code is meant to teach me how okay it is to move code into a component
-  // // But this code does not collect the id of the hat, so when it's clicked it only
-  // //  submits the user.id - which is frustrating
+  // This code is meant to teach me how okay it is to move code into a component
+  // this code is not in its own jsx file because i put it here and it works
+  // and when I move it its own jsx file it does not work
   function FavBtn({ hat }) {
     console.log("FavBtn Click:", hat.id);
     console.log("hat:", hat);

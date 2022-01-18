@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { Button, Paper, TextField } from "@mui/material";
 import './AddHatPage.css'
 // this is a real ride, folks
-// AddHat form uses local state to collect the data from form inputs
+// AddHat form uses local state to collect the data from the form inputs
 
 function AddHatPage() {
   const dispatch = useDispatch();
@@ -138,7 +138,6 @@ function AddHatPage() {
             p={30}
             className="edit-btn"
             type="submit" 
-            // color="secondary" 
             variant="contained">
             Add One Hat
           </Button>

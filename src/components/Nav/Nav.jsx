@@ -20,8 +20,6 @@ function Nav() {
       </Link>
       <br />
 
-      {/* <ViewModeButtons /> */}
-      
       <div className="buttons">
         <Link className="navLink" to="/hats_time">
           Hats Time
@@ -67,18 +65,6 @@ function Nav() {
             <LogOutButton className="navLink" />
           </>
         )}
-
-        {/* <Link className="navLink" to="/hats_time">
-          Hats Time
-        </Link>
-
-        <Link className="navLink" to="/about">
-          About
-        </Link>
-
-        <Link className="navLink" to="/info">
-          Info Page
-        </Link> */}
       </div>
     </Box>
   );

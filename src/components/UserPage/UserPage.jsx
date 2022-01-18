@@ -19,8 +19,7 @@ function UserPage() {
   // but then all hell breaks loose when our guy adam decides to make this the Profile page
   // now we are rendering all of the hats uploaded by the user
   // we have an edit form so user can adjust details of their hats
-  // the goal is to populate the edit hat form with the existing info from db
-  // would love to clear inputs and hide form following submit
+  // it auto-populates with the existing info from db
 
   const user = useSelector((store) => store.user);
   const hats = useSelector((store) => store.setUserHats);
@@ -33,14 +32,6 @@ function UserPage() {
   }, [user.id]);
 
   console.log("UserPage.jsx user.id:", user.id);
-
-  // const [editDescription, setEditDescription] = useState("");
-  // const [editUrl, setEditUrl] = useState("");
-  // const [editColor, setEditColor] = useState("");
-  // const [editStyle, setEditStyle] = useState("");
-  // const [editFabric, setEditFabric] = useState("");
-  // const [editVibe, setEditVibe] = useState("");
-  // const [editId, setEditId] = useState("");
 
   const editDescriptionChange = (e) => {
     console.log("descriptionChange:", e.target.value);
@@ -93,7 +84,6 @@ function UserPage() {
 
   const editHat = (e) => {
     e.preventDefault();
-    // console.log("click editHat e.target.value:", e.target.value);
     dispatch({
       type: "EDIT_HAT",
       payload: {
@@ -204,7 +194,7 @@ function UserPage() {
                 </tr>
               </tbody>
             </table>
-
+            {/* the hidden edit form */}
             <div id={hat.id} className="hidden">
               <Paper
                 className="paper"
@@ -216,62 +206,62 @@ function UserPage() {
                 >
                   <TextField
                     sx={{ m: 2 }}
-                    label="enter new description"
+                    label="enter new description*"
                     onChange={editDescriptionChange}
                     value={hatToEdit.description || ""}
                     type="text"
-                    // placeholder="new description"
                     focused
                   />
                   <br />
                   <TextField
                     sx={{ m: 2 }}
-                    label="enter new photo url"
+                    label="enter new photo url*"
                     onChange={editUrlChange}
                     value={hatToEdit.photo_url || ""}
                     type="text"
                     placeholder="new photo url"
                     focused
+                    required
                   />
                   <br />
                   <TextField
                     sx={{ m: 2 }}
-                    label="enter new hat color"
+                    label="enter new hat color*"
                     onChange={editColorChange}
                     value={hatToEdit.hat_color || ""}
                     type="text"
-                    // placeholder="new hat color"
                     focused
+                    required
                   />
                   <br />
                   <TextField
                     sx={{ m: 2 }}
-                    label="enter new hat style"
+                    label="enter new hat style*"
                     onChange={editStyleChange}
                     value={hatToEdit.hat_style || ""}
                     type="text"
-                    // placeholder="new hat style"
                     focused
+                    required
                   />
                   <br />
                   <TextField
                     sx={{ m: 2 }}
-                    label="enter new hat fabric"
+                    label="enter new hat fabric*"
                     onChange={editFabricChange}
                     value={hatToEdit.hat_fabric || ""}
                     type="text"
-                    // placeholder="new hat fabric"
                     focused
+                    required
                   />
                   <br />
                   <TextField
                     sx={{ m: 2 }}
-                    label="enter new hat vibe"
+                    label="enter new hat vibe*"
                     onChange={editVibeChange}
                     value={hatToEdit.hat_vibe || ""}
                     type="text"
-                    // placeholder="new hat vibe"
                     focused
+                    required
                   />
                   <br />
                   <Button

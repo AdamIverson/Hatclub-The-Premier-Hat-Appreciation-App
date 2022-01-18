@@ -3,6 +3,8 @@ import { Button, ButtonGroup } from "@mui/material";
 // code for two buttons: LEXEND FONT and DARK MODE
 // I let myself do this way too early as a reward for doing something or another
 // probably getting a delete route going or something
+// ULTIMATELY ended up using neither button, per se, but the functionality of each is reflected
+// in the final product
 
 export default function ViewModeButtons() {
   function lexendFont() {

@@ -1,7 +1,6 @@
 function DocumentationPage() {
   return (
     <>
-      <p>DOCUMENTATION</p>
     </>
   )
 }
