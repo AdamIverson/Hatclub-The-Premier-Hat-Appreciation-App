@@ -131,6 +131,7 @@ function UserPage() {
   return (
     <div >
       <h1>look at your dang hats {user.username}</h1>
+      <h2>you are HATCREATOR is {user.id}</h2>
       {/* <p>Your ID is: {user.id}</p> */}
       <Grid container spacing={30}>
         {hats.map((hat) => (

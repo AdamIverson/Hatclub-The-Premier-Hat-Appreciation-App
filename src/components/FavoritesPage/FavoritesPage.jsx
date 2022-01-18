@@ -42,7 +42,13 @@ function FavoritesPage() {
               alt={`${fav.description}`}
             ></img>
             <table>
-              <thead></thead>
+              <thead>
+                <th>
+                  HATCREATOR:
+                </th>
+                <th>{fav.creator_id}</th>
+              </thead>
+              <hr />
               <tr>
                 <td>Hat Tag:</td>
                 <td>{fav.hat_id}</td>
