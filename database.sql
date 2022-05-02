@@ -30,7 +30,7 @@ CREATE TABLE "user" (
 		"id" SERIAL PRIMARY KEY,
 		"user_id" INT,
 		"hat_id" INT,
-		FOREIGN KEY (user_id) REFERENCES "user"(id) ON DELETE CASCADE
+		FOREIGN KEY (user_id) REFERENCES "user"(id) ON DELETE CASCADE,
 		FOREIGN KEY (hat_id) REFERENCES "hat"(id) ON DELETE CASCADE
 	);
 
